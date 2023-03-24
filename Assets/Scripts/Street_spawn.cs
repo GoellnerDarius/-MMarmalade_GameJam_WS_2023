@@ -9,7 +9,6 @@ public class Street_spawn : MonoBehaviour
 
     public float Counter = 0;
     public GameObject Street;
-    public Text ViewCount;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +20,9 @@ public class Street_spawn : MonoBehaviour
     void Update()
     {
         Counter += 1 * Time.deltaTime;
-        ViewCount.text = "Time:" + Math.Round(Counter,1);
         if(Counter >= 5 && Counter <= 6)
         {
-            Console.WriteLine(" Der gamejam suckt");
+            Instantiate(Street,new Vector3(0f,-40f,-10f),new Quaternion());
             Counter = 0;
         }
     }
