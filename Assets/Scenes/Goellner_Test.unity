@@ -284,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229324722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.57, y: 9.38, z: 0}
+  m_LocalPosition: {x: 17.52, y: 9.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -343,7 +343,7 @@ MonoBehaviour:
   tileMaps:
   - {fileID: 838688228}
   - {fileID: 443313637}
-  speed: 3
+  speed: 10
 --- !u!4 &696695873
 Transform:
   m_ObjectHideFlags: 0
@@ -651,6 +651,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4324083439274459339, guid: 36e83631e0424c44898c074292046509, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324083439274459339, guid: 36e83631e0424c44898c074292046509, type: 3}
       propertyPath: upperBound
       value: 5
       objectReference: {fileID: 0}
@@ -710,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colliders: {fileID: 1923483527}
-  _speed: 3
+  _speed: 10
 --- !u!4 &1243795645
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,12 +1153,12 @@ MonoBehaviour:
   EnemyTransform: {fileID: 2134882319}
   EnemyMovement: {x: 0, y: 0, z: 0}
   EnemySpeed: {x: 1, y: 0, z: 0}
-  FloatingMaxspeed: 40
-  ChangeDirectionTime: 4
+  FloatingMaxspeed: 20
+  ChangeDirectionTime: 1
   CurrentRN: 0
-  Bullet: {fileID: 6531484255103805363, guid: a773b2713a2283b4eaa2243f8a856622, type: 3}
+  Bullet: {fileID: 6531484255103805363, guid: caff1dd37e8f0bf47a9ff6a5c4a77956, type: 3}
   AttackMovement: {x: 0, y: 0, z: 0}
-  AttackingMaxspeed: 200
+  AttackingMaxspeed: 50
   AttackDelay: 4
   AttackPatternDelay:
   - 0.1
