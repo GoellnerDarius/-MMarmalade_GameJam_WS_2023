@@ -68,22 +68,22 @@ public class PlayerShooter : MonoBehaviour
     private void SpawnBullet()
     {
         Vector3 position = transform.position;
-        Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity);
+        Instantiate(bullet, position + new Vector3(0, 2.3f, 0), Quaternion.identity);
         lastShoot = Time.time;
         if (multishotTimer > 0)
         {
-            Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,45);
-            Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,-45);
+            Instantiate(bullet, position + new Vector3(0, 2.3f, 0), Quaternion.identity).transform.Rotate(0, 0, 45);
+            Instantiate(bullet, position + new Vector3(0, 2.3f, 0), Quaternion.identity).transform.Rotate(0, 0, -45);
         }
-        
-    }
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-      Collide(other);
+
     }
 
-    private void Collide( Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Collide(other);
+    }
+
+    private void Collide(Collider2D other)
     {
         //Powerupshield
         if (shield > 0)
@@ -108,7 +108,7 @@ public class PlayerShooter : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col)
-    
+
 
     {
         Collide(col.collider);

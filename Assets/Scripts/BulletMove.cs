@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float bulletSpeed = 6;
+    public float BulletSpeed = 30;
 
     private int pierce;
 
@@ -18,7 +18,7 @@ public class BulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(0, 1, 0) * (bulletSpeed * Time.deltaTime));
+        transform.Translate(new Vector3(0, 1, 0) * (BulletSpeed * Time.deltaTime));
     }
 
     private void OnBecameInvisible()
@@ -33,6 +33,8 @@ public class BulletMove : MonoBehaviour
 
     private void Collided(Collider2D other)
     {
+        Debug.Log(tag + " collides with " + other.tag, gameObject);
+
         if (this.CompareTag("EnemyBullet") && !other.CompareTag("EnemyBullet") && !other.CompareTag("Enemy"))
         {
             // Hey moch wos cooles?

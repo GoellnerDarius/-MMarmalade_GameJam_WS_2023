@@ -1098,7 +1098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2087430257
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,9 +1128,10 @@ GameObject:
   - component: {fileID: 2134882319}
   - component: {fileID: 2134882318}
   - component: {fileID: 2134882317}
+  - component: {fileID: 2134882320}
   m_Layer: 0
   m_Name: Hot_Girl
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,7 +1160,7 @@ MonoBehaviour:
   Bullet: {fileID: 6531484255103805363, guid: caff1dd37e8f0bf47a9ff6a5c4a77956, type: 3}
   AttackMovement: {x: 0, y: 0, z: 0}
   AttackingMaxspeed: 50
-  AttackDelay: 4
+  AttackDelay: 3
   AttackPatternDelay:
   - 0.1
   - 0.3
@@ -1167,6 +1168,7 @@ MonoBehaviour:
   - 4
   - 5
   BulletAmount: 5
+  Lifes: 10
 --- !u!212 &2134882318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1234,6 +1236,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!61 &2134882320
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134882316}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.21133333}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &4550572718324805379
 PrefabInstance:
   m_ObjectHideFlags: 0

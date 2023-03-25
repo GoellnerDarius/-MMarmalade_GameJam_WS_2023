@@ -34,9 +34,7 @@ public class Enemy : MonoBehaviour
     public int BulletAmount = 2;
     private int ShotsFired = 0;
     private int CurrentAttackNum = -1;
-    private int lifes = 10;
-
-
+    public int Lifes = 10;
 
     void Start()
     {
@@ -53,12 +51,12 @@ public class Enemy : MonoBehaviour
         {
             SmoothMove();
             Attack();
-            Debug.Log("Movement loop");
+            // Debug.Log("Movement loop");
         }
         else
         {
             ContinueAttack();
-            Debug.Log(" In Continue Loop");
+            // Debug.Log(" In Continue Loop");
         }
         //  Debug.Log(EnemyTransform.position.x);
     }
@@ -112,7 +110,7 @@ public class Enemy : MonoBehaviour
 
         if (TimeTillAttack > AttackDelay && AttackisRunning == false)
         {
-            Debug.Log("Attack triggered");
+            // Debug.Log("Attack triggered");
             switch (RNG.Next(1100))
             {
                 case int i when (i < 500):
@@ -170,35 +168,35 @@ public class Enemy : MonoBehaviour
         {
             case 0:
                 {
-                    Debug.Log("No Attack is currently running");
+                    // Debug.Log("No Attack is currently running");
                     break;
                 }
             case 1:
                 {
-                    Debug.Log("Attack is instant. AttackisRunning Variable should not be 1");
+                    // Debug.Log("Attack is instant. AttackisRunning Variable should not be 1");
                     break;
                 }
             case 2:
                 {
-                    Debug.Log("Attack 2 triggered");
+                    // Debug.Log("Attack 2 triggered");
                     Attackpattern2();
                     break;
                 }
             case 3:
                 {
-                    Debug.Log("Attack 3 triggered");
+                    // Debug.Log("Attack 3 triggered");
                     Attackpattern3();
                     break;
                 }
             case 4:
                 {
-                    Debug.Log("Attack 4 triggered");
+                    // Debug.Log("Attack 4 triggered");
                     Attackpattern4();
                     break;
                 }
             case 5:
                 {
-                    Debug.Log("Attack 5 triggered");
+                    // Debug.Log("Attack 5 triggered");
                     Attackpattern5();
                     break;
                 }
@@ -469,8 +467,8 @@ public class Enemy : MonoBehaviour
     {
         if (col.tag.Equals("PlayerBullet"))
         {
-            lifes--;
-            if (lifes == 0)
+            Lifes--;
+            if (Lifes == 0)
                 Destroy(gameObject);
         }
     }
