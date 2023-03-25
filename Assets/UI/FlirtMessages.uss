@@ -21,16 +21,22 @@
     width: 75%;
     margin-top: 3px;
     margin-bottom: 3px;
+    padding: 3px 6px;
+    opacity:0.90;
 }
 
 #messages #left {
-    background-color: #ea580c;
+    background-color: #fb923c;
+    border-color: #ea580c;
+    border-width: 1px;
     border-radius: 7px;
     margin-right: auto;
 }
 
 #messages #right {
-    background-color: white;
+    background-color: #fafafa;
+    border-color: #a1a1aa;
+    border-width: 1px;
     border-radius: 7px;
     margin-left: auto;
 }
@@ -49,4 +55,32 @@
     font-size: 12px;
     -unity-font-style: bold;
     border-width: 1.5px;
+}
+
+.progress-bar {
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-radius:8px;
+    overflow:hidden;
+    border-width:1.5px;
+    border-color: #ef4444;
+    height:16px;
+}
+
+.unity-progress-bar__progress {
+    background-color: #ef4444;
+}
+
+.unity-progress-bar__progress {
+    margin:0;
+    padding:0;
+}
+
+.unity-progress-bar__background {
+    border-width: 0px;
+    border-color: #ef4444;
+    background-color: #fee2e2;
+        height:16px;
+
 }

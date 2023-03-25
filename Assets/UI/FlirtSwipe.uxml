@@ -2,6 +2,7 @@
     <Style src="project://database/Assets/UI/FlirtSwipe.uss?fileID=7433441132597879392&amp;guid=f634aebe630f4416c88e917d297dce6d&amp;type=3#FlirtSwipe" />
     <Style src="project://database/Assets/UI/Layout.uss?fileID=7433441132597879392&amp;guid=803ae7056e71243e89f272c89c67cb8f&amp;type=3#Layout" />
     <ui:VisualElement name="wrapper">
+        <ui:Image class="logo" />
         <ui:VisualElement style="width: 100%; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; height: 240px">
             <ui:Image name="profile-picture" class="profile-picture" />
             <ui:Label text="Label" display-tooltip-when-elided="true" name="name" style="position: absolute; bottom: 10px; left: 10px; color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 13px;" />
