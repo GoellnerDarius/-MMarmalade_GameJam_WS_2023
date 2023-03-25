@@ -1,0 +1,15 @@
+#wrapper {
+    flex-grow: 1;
+    max-width: none;
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: rgb(255, 255, 255);
+    min-width: 200px;
+}

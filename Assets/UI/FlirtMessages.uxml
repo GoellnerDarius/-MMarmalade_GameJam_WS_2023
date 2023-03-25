@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Layout.uss" />
+    <Style src="project://database/Assets/UI/FlirtMessages.uss" />
+    <ui:VisualElement name="wrapper">
+        <ui:Image name="profile-picture"/>
+        <ui:Button text="Button" display-tooltip-when-elided="true" />
+        <ui:Toggle label="Toggle" />
+        <ui:VisualElement name="answers">
+            <ui:Button text="Answer 1"/>
+            <ui:Button text="Answer 2"/>
+            <ui:Button text="Answer 3"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
