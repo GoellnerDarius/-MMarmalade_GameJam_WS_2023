@@ -16,7 +16,7 @@
 }
 
 #messages Label {
-    font-size: 12px;
+    font-size: 18px;
     white-space: normal;
     width: 75%;
     margin-top: 3px;
@@ -43,16 +43,17 @@
 
 #answers {
     width: 100%;
+    padding: 10px;
 }
 
 #answers Button {
     margin: 3px 2px;
     background-color: #fed7aa;
     color: #ea580c;
-    border-radius: 12px;
+    border-radius: 16px;
     border-color: #ea580c;
     padding: 3px 0;
-    font-size: 12px;
+    font-size: 18px;
     -unity-font-style: bold;
     border-width: 1.5px;
 }
@@ -61,11 +62,11 @@
     width: 100%;
     margin:0;
     padding:0;
-    border-radius:8px;
+    border-radius:12px;
     overflow:hidden;
     border-width:1.5px;
     border-color: #ef4444;
-    height:16px;
+    height:24px;
 }
 
 .unity-progress-bar__progress {
@@ -81,6 +82,5 @@
     border-width: 0px;
     border-color: #ef4444;
     background-color: #fee2e2;
-        height:16px;
-
+    height:24px;
 }
