@@ -38,11 +38,14 @@ public class BulletMove : MonoBehaviour
             pierce--;
             if (pierce <= 0)
                 Destroy(gameObject);
+            if(col.tag.Equals("EnemyBullet"))
+                Destroy(col.gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        
         Collided(col.collider);
     }
 }
