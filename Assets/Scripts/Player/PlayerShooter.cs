@@ -28,7 +28,11 @@ public class PlayerShooter : MonoBehaviour
         if (multishotTimer >= 0)
             multishotTimer -= Time.deltaTime;
         if (pierceTimer >= 0)
+        {
             pierceTimer -= Time.deltaTime;
+            if (pierceTimer <= 0)
+                PowerUpSates.piercing = 1;
+        }
 
         //Handle input
         if (Input.GetKey(KeyCode.Space) && lastShoot + 0.5 < Time.time)
