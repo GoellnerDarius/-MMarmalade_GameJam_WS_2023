@@ -3,7 +3,7 @@
     <Style src="project://database/Assets/UI/FlirtMessages.uss?fileID=7433441132597879392&amp;guid=4a69f611ce66442818d68b80e1dc3f33&amp;type=3#FlirtMessages" />
     <ui:VisualElement name="wrapper" style="flex-direction: column; flex-wrap: nowrap; align-items: center;">
         <ui:Image name="profile-picture" />
-        <ui:Image class="logo logo-white" />
+        <ui:Image class="logo" />
         <ui:VisualElement style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px;">
             <ui:ProgressBar value="42" class="progress-bar" style="width: 100%;" />
         </ui:VisualElement>
