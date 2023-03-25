@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 550017791}
   m_Layer: 0
   m_Name: Item
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9466,7 +9466,7 @@ GameObject:
   - component: {fileID: 1304003266}
   m_Layer: 0
   m_Name: Item 2
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
