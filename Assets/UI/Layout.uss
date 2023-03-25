@@ -1,15 +1,30 @@
 #wrapper {
     flex-grow: 1;
     max-width: none;
-    width: 25%;
+    width: 30%;
     height: 100%;
     align-items: center;
-    justify-content: flex-start;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     margin-bottom: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: #18181b;
     min-width: 200px;
+}
+
+.logo {
+    background-image: url('project://database/Assets/UI/Images/logo.png');
+    -unity-background-scale-mode: scale-to-fit;
+    height: 32px;
+    margin: 12px 0;
+    width: 100%;
+}
+
+.logo-white {
+    background-image: url('project://database/Assets/UI/Images/logo_white.png?fileID=21300000&guid=5a86bbcbbfba74c0f962f1c509780759&type=3#logo_white');
+    -unity-background-scale-mode: scale-to-fit;
+    height: 32px;
+    margin: 12px 0;
+    width: 100%;
 }

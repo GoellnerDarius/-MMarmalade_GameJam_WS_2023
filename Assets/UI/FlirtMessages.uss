@@ -1,9 +1,87 @@
 #profile-picture {
     /*background-image: url("project://database/Assets/UI/Images/profile_picture.png?fileID=2800000&amp;guid=ee898a0a6ba5d4e6f9aec36b930f3c7a&amp;type=3#profile_picture");*/
     width: 100%;
-    height: 100%;
+    height: 85%;
+    bottom: 0;
     position: absolute;
     flex-direction: column;
     align-items: stretch;
-    -unity-background-scale-mode: scale-and-crop;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+#messages {
+    width: 100%;
+    padding: 5px;
+    flex-grow: 1;
+    flex-direction: column-reverse;
+}
+
+#messages Label {
+    font-size: 18px;
+    white-space: normal;
+    width: 75%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 3px 6px;
+    opacity:0.90;
+}
+
+#messages #left {
+    background-color: #fb923c;
+    border-color: #ea580c;
+    border-width: 1px;
+    border-radius: 7px;
+    margin-right: auto;
+}
+
+#messages #right {
+    background-color: #fafafa;
+    border-color: #a1a1aa;
+    border-width: 1px;
+    border-radius: 7px;
+    margin-left: auto;
+}
+
+#answers {
+    width: 100%;
+    padding: 10px;
+}
+
+#answers Button {
+    margin: 3px 2px;
+    background-color: #fed7aa;
+    color: #ea580c;
+    border-radius: 16px;
+    border-color: #ea580c;
+    padding: 3px 0;
+    font-size: 18px;
+    -unity-font-style: bold;
+    border-width: 1.5px;
+}
+
+.progress-bar {
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-radius:12px;
+    overflow:hidden;
+    border-width:1.5px;
+    border-color: #ef4444;
+    height:24px;
+}
+
+.unity-progress-bar__progress {
+    background-color: #ef4444;
+}
+
+.unity-progress-bar__progress {
+    margin:0;
+    padding:0;
+}
+
+.unity-progress-bar__background {
+    border-width: 0px;
+    border-color: #ef4444;
+    background-color: #7f1d1d;
+    height:24px;
 }
