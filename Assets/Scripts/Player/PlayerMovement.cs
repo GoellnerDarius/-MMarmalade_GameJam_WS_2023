@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 10f;
+    public float upperBound =  0;
     void Start()
     {
     }
@@ -15,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector3 movement = getMovement();
-
         transform.Translate(movement * (speed * Time.deltaTime));
     }
 
@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
             movement += new Vector3(0, -1, 0);
 
+        if (transform.position.y + movement.y > upperBound)
+            movement.y = upperBound-movement.y;
         return movement;
     }
 }
