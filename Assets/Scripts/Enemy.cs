@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     public Transform EnemyTransform;
     public Vector3 EnemyMovement = new Vector3(0f, 0f, 0f);
-    public Vector3 EnemySpeed = new Vector3(1f,0f,0f);
+    public Vector3 EnemySpeed = new Vector3(1f, 0f, 0f);
     public float FloatingMaxspeed = 25f;
 
     private System.Random RNG = new System.Random(Guid.NewGuid().GetHashCode());
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     public float AttackingMaxspeed = 100;
     public float AttackDelay = 4;
     private float TimeTillAttack = 0;
-    public float[] AttackPatternDelay = {0.01f,0.5f,1f,2f,2.5f};
+    public float[] AttackPatternDelay = { 0.01f, 0.5f, 1f, 2f, 2.5f };
     private bool AttackStartReached = false;
     private bool AttackisRunning = false;
 
@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(AttackisRunning == false)
+        if (AttackisRunning == false)
         {
             SmoothMove();
             Attack();
@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
             ContinueAttack();
             Debug.Log(" In Continue Loop");
         }
-      //  Debug.Log(EnemyTransform.position.x);
+        //  Debug.Log(EnemyTransform.position.x);
     }
 
     private void SmoothMove()
@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
     public void Attack()
     {
         TimeTillAttack += Time.deltaTime;
-        
+
         if (TimeTillAttack > AttackDelay && AttackisRunning == false)
         {
             Debug.Log("Attack triggered");
@@ -111,15 +111,15 @@ public class Enemy : MonoBehaviour
             {
                 case int i when (i < 500):
                     {
-                        //Attackpattern1();
-                        AttackisRunning = true;
-                        CurrentAttackNum = 7;
+                        Attackpattern1();
+                        //AttackisRunning = true;
+                        //CurrentAttackNum = 7;
                         break;
                     }
                 case int i when (i > 500 && i < 600):
                     {
-                          AttackisRunning = true;
-                          CurrentAttackNum = 2;
+                        AttackisRunning = true;
+                        CurrentAttackNum = 2;
                         break;
                     }
                 case int i when (i > 600 && i < 700):
@@ -130,14 +130,14 @@ public class Enemy : MonoBehaviour
                     }
                 case int i when (i > 700 && i < 800):
                     {
-                           AttackisRunning = true;
-                           CurrentAttackNum = 4;
+                        AttackisRunning = true;
+                        CurrentAttackNum = 4;
                         break;
                     }
                 case int i when (i > 800 && i < 900):
                     {
-                         AttackisRunning = true;
-                         CurrentAttackNum = 5;
+                        AttackisRunning = true;
+                        CurrentAttackNum = 5;
                         break;
                     }
                 case int i when (i > 900 && i <= 1000):
@@ -152,7 +152,7 @@ public class Enemy : MonoBehaviour
                         CurrentAttackNum = 7;
                         break;
                     }
-                    
+
             }
             TimeTillAttack = 0;
         }
@@ -160,7 +160,7 @@ public class Enemy : MonoBehaviour
 
     public void ContinueAttack()
     {
-        switch(CurrentAttackNum)
+        switch (CurrentAttackNum)
         {
             case 0:
                 {
@@ -215,7 +215,7 @@ public class Enemy : MonoBehaviour
         Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 160f);
         Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 180f);
         Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 200f);
-    }    
+    }
     public void Attackpattern2()
     {
 
@@ -246,7 +246,7 @@ public class Enemy : MonoBehaviour
             {
                 EnemyTransform.Translate(-EnemyMovement * Time.deltaTime);
                 TimeTillAttack += Time.deltaTime;
-                if(TimeTillAttack >= AttackPatternDelay[0])
+                if (TimeTillAttack >= AttackPatternDelay[0])
                 {
                     Instantiate(Bullet, EnemyTransform.position, new Quaternion(0f, 0f, 180f, 0f));
                     TimeTillAttack = 0;
@@ -254,7 +254,7 @@ public class Enemy : MonoBehaviour
             }
 
         }
-    }    
+    }
     public void Attackpattern3()
     {
         EnemyMovement.x = AttackingMaxspeed;
@@ -291,10 +291,10 @@ public class Enemy : MonoBehaviour
             }
 
         }
-    }    
+    }
     public void Attackpattern4()
     {
-        if(AttackStartReached == false)
+        if (AttackStartReached == false)
         {
             MoveCenter();
         }
@@ -303,7 +303,7 @@ public class Enemy : MonoBehaviour
             TimeTillAttack += Time.deltaTime;
             if (TimeTillAttack >= AttackPatternDelay[1])
             {
-                if(ShotsFired < BulletAmount)
+                if (ShotsFired < BulletAmount)
                 {
                     Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 160);
                     Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 180);
@@ -324,7 +324,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-    }    
+    }
     public void Attackpattern5()
     {
         if (AttackStartReached == false)
@@ -338,17 +338,17 @@ public class Enemy : MonoBehaviour
             {
                 if (ShotsFired < BulletAmount)
                 {
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 1f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 2f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 3f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 4f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 4.5f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 1f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 2f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 3f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 4f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 4.5f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
 
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 1f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 2f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 3f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 4f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
-                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 4.5f *(leftbounds.x/5f) , EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 1f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 2f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 3f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 4f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
+                    Instantiate(Bullet, new Vector3(EnemyTransform.position.x - 4.5f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
                     TimeTillAttack = 0;
                     ShotsFired++;
                 }
@@ -369,7 +369,7 @@ public class Enemy : MonoBehaviour
         if (AttackStartReached == false)
         {
             MoveCenter();
-        }   
+        }
         else
         {
             TimeTillAttack += Time.deltaTime;
@@ -442,21 +442,21 @@ public class Enemy : MonoBehaviour
     private void MoveCenter()
     {
 
-            if (EnemyTransform.position.x > 0)
-            {
-                EnemyMovement.x = AttackingMaxspeed;
-            }
-            else
-            {
-                EnemyMovement.x = -AttackingMaxspeed;
-            }
+        if (EnemyTransform.position.x > 0)
+        {
+            EnemyMovement.x = AttackingMaxspeed;
+        }
+        else
+        {
+            EnemyMovement.x = -AttackingMaxspeed;
+        }
 
-            EnemyTransform.Translate(EnemyMovement * Time.deltaTime);
+        EnemyTransform.Translate(EnemyMovement * Time.deltaTime);
 
-            if (EnemyTransform.position.x > -2 && EnemyTransform.position.x < 2)
-            {
-                AttackStartReached = true;
-            }
+        if (EnemyTransform.position.x > -2 && EnemyTransform.position.x < 2)
+        {
+            AttackStartReached = true;
+        }
     }
 
 
@@ -465,7 +465,7 @@ public class Enemy : MonoBehaviour
         if (col.tag.Equals("PlayerBullet"))
         {
             lifes--;
-            if(lifes==0)
+            if (lifes == 0)
                 Destroy(gameObject);
         }
     }
