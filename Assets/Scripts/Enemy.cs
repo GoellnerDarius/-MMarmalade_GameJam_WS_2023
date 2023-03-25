@@ -7,6 +7,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
+    private int lifes = 10;
+    private Vector3 leftbounds = new(0, 0, 0);
     void Start()
     {
     }
@@ -14,13 +16,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag.Equals("PlayerBullet"))
         {
-            Destroy(gameObject);
+            lifes--;
+            if(lifes==0)
+                Destroy(gameObject);
         }
     }
 }

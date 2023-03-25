@@ -64,12 +64,13 @@ public class PlayerShooter : MonoBehaviour
 
     private void SpawnBullet()
     {
-        Instantiate(bullet, transform.position + new Vector3(0, 1.3f, 0), Quaternion.identity);
+        Vector3 position = transform.position;
+        Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity);
         lastShoot = Time.time;
         if (multishotTimer > 0)
         {
-            Instantiate(bullet, transform.position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,45);
-            Instantiate(bullet, transform.position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,-45);
+            Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,45);
+            Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,-45);
 
         }
     }
@@ -87,7 +88,6 @@ public class PlayerShooter : MonoBehaviour
         if (other.tag.Equals("EnemyBullet"))
         {
             lifes--;
-            // Destroy(other.gameObject);
         }
 
         if (lifes == 0)
