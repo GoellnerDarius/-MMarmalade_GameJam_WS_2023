@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
     private Vector3 leftbounds = new(-115f, 0f, 0f);
     private Vector3 rightbounds = new(115f, 0f, 0f);
 
+    public Transform CenterPosition;
+    public Transform LeftBoundsObject;
+    public Transform RightBoundsObject;
     public Transform EnemyTransform;
     public Vector3 EnemyMovement = new Vector3(0f, 0f, 0f);
     public Vector3 EnemySpeed = new Vector3(1f, 0f, 0f);
@@ -37,7 +40,10 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        transform.position = CenterPosition.position;
         CurrentRN = RNG.Next(200);
+        leftbounds = LeftBoundsObject.position;
+        rightbounds = RightBoundsObject.position;
     }
 
     // Update is called once per frame
@@ -441,8 +447,7 @@ public class Enemy : MonoBehaviour
 
     private void MoveCenter()
     {
-
-        if (EnemyTransform.position.x > 0)
+        if (EnemyTransform.position.x > CenterPosition.position.x)
         {
             EnemyMovement.x = AttackingMaxspeed;
         }
