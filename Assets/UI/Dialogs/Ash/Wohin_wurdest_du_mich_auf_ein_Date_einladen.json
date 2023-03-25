@@ -1,0 +1,34 @@
+{
+   "q":"Wohin würdest du mich auf ein Date einladen?",
+   "answers":[
+      {
+         "a":"Auf einen Tagestrip auf den Vesuv.",
+         "mood":1,
+         "followup":{
+            "q":"Oh voll cool! Was würden wir denn dort machen?",
+            "answers":[
+               {
+                  "a":"Marshmellows über der Lava rösten.",
+                  "mood":1
+               },
+               {
+                  "a":"Ein heißes Bad nehmen!",
+                  "mood":0
+               },
+               {
+                  "a":"Uns gottlos einen reindübeln.",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Zu den MIttelaltertagen.",
+         "mood":0
+      },
+      {
+         "a":"In den Wasserpark.",
+         "mood":-1
+      }
+   ]
+}

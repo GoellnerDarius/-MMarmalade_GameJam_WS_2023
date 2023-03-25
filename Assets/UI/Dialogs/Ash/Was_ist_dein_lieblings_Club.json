@@ -1,0 +1,34 @@
+{
+   "q":"Was ist dein lieblings Club?",
+   "answers":[
+      {
+         "a":"Ich bin eher so der Shisha bar enjoyer.",
+         "mood":1,
+         "followup":{
+            "q":"Oh ja! Ich lieb den erdrückenden Rauch dort! Nichts ist besser für die Lunge!",
+            "answers":[
+               {
+                  "a":"Das einzige was besser ist, ist der Smog in China!",
+                  "mood":1
+               },
+               {
+                  "a":"Am liebsten habe ich den Steinkohle Geschmack, der riecht so gut.",
+                  "mood":0
+               },
+               {
+                  "a":"Nein ich bin nur für die Getränke dort.",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Solang ich drinnen rauchen darf, ist es mir egal.",
+         "mood":0
+      },
+      {
+         "a":"Ich liebe es mir im Grillclub ein paar Brutzler reinzukokeln.",
+         "mood":-1
+      }
+   ]
+}

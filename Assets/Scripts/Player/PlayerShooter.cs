@@ -1,13 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
 {
     public GameObject bullet;
-    private int lifes = 3;
+    public int lifes = 3;
     private float lastShoot;
     private int shield = 0;
     private float pierceTimer = 0;
