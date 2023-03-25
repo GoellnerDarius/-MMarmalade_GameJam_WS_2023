@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class FlirtMessages : MonoBehaviour
 {
-    public event Action<string> navigate;
+    // public event Action<string> navigate;
 
     public Flame flame;
     private UIDocument document;

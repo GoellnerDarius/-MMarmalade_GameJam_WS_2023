@@ -7,3 +7,46 @@
     align-items: stretch;
     -unity-background-scale-mode: scale-and-crop;
 }
+
+#messages {
+    width: 100%;
+    padding: 5px;
+    flex-grow: 1;
+    flex-direction: column-reverse;
+}
+
+#messages Label {
+    font-size: 12px;
+    white-space: normal;
+    width: 75%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#messages #left {
+    background-color: #ea580c;
+    border-radius: 7px;
+    margin-right: auto;
+}
+
+#messages #right {
+    background-color: white;
+    border-radius: 7px;
+    margin-left: auto;
+}
+
+#answers {
+    width: 100%;
+}
+
+#answers Button {
+    margin: 3px 2px;
+    background-color: #fed7aa;
+    color: #ea580c;
+    border-radius: 12px;
+    border-color: #ea580c;
+    padding: 3px 0;
+    font-size: 12px;
+    -unity-font-style: bold;
+    border-width: 1.5px;
+}
