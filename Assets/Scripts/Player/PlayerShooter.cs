@@ -9,7 +9,7 @@ public class PlayerShooter : MonoBehaviour
     public GameObject bullet;
     private int lifes = 3;
     private float lastShoot;
-    private int shield = 3;
+    private int shield = 0;
     private float pierceTimer = 0;
     private float multishotTimer = 0;
 
@@ -61,7 +61,6 @@ public class PlayerShooter : MonoBehaviour
 
         powerupStage = 0;
     }
-
     private void SpawnBullet()
     {
         Vector3 position = transform.position;
@@ -71,16 +70,23 @@ public class PlayerShooter : MonoBehaviour
         {
             Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,45);
             Instantiate(bullet, position + new Vector3(0, 1.3f, 0), Quaternion.identity).transform.Rotate(0,0,-45);
-
         }
+        
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+      Collide(other);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Collide( Collider2D other)
     {
         //Powerupshield
         if (shield > 0)
         {
             shield--;
+            Destroy(other.gameObject);
+
             return;
         }
 
@@ -88,11 +94,19 @@ public class PlayerShooter : MonoBehaviour
         if (other.tag.Equals("EnemyBullet"))
         {
             lifes--;
+            Destroy(other.gameObject);
         }
 
         if (lifes == 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    
+
+    {
+        Collide(col.collider);
     }
 }
