@@ -6,18 +6,19 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float bulletSpeed = 6;
+    public float BulletSpeed = 30;
+
     private int pierce;
+
     void Start()
     {
-        pierce= PowerUpSates.piercing;
-
+        pierce = PowerUpSates.piercing;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(0,1,0) * (bulletSpeed * Time.deltaTime));
+        transform.Translate(new Vector3(0, 1, 0) * (BulletSpeed * Time.deltaTime));
     }
 
     private void OnBecameInvisible()
@@ -30,22 +31,28 @@ public class BulletMove : MonoBehaviour
         Collided(col);
     }
 
-    private void Collided(Collider2D col)
+    private void Collided(Collider2D other)
     {
+        Debug.Log(tag + " collides with " + other.tag, gameObject);
+
+        if (this.CompareTag("EnemyBullet") && !other.CompareTag("EnemyBullet") && !other.CompareTag("Enemy"))
+        {
+            // Hey moch wos cooles?
+        }
+
         //Reduces Piercing and deletes Bullet
-        if (!col.tag.Equals("PlayerBullet")&&!col.tag.Equals("Player"))
+        if (this.CompareTag("PlayerBullet") && !other.tag.Equals("PlayerBullet") && !other.tag.Equals("Player"))
         {
             pierce--;
             if (pierce <= 0)
                 Destroy(gameObject);
-            if(col.tag.Equals("EnemyBullet"))
-                Destroy(col.gameObject);
+            if (other.tag.Equals("EnemyBullet"))
+                Destroy(other.gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        
         Collided(col.collider);
     }
 }

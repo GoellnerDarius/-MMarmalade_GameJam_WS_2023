@@ -1,0 +1,36 @@
+{
+  "questions": [
+    {
+      "q": "Question 1",
+      "a": "Answer 1",
+      "mood": 1,
+      "follow-up": [
+        {
+          "q": "Question 1",
+          "a": "Answer 1",
+          "mood": 1
+        },
+        {
+          "q": "Question 2",
+          "a": "Answer 2",
+          "mood": 0
+        },
+        {
+          "q": "Question 3",
+          "a": "Answer 3",
+          "mood": -1
+        }
+      ]
+    },
+    {
+      "q": "Question 2",
+      "a": "Answer 2",
+      "mood": 0
+    },
+    {
+      "q": "Question 3",
+      "a": "Answer 3",
+      "mood": -1
+    }
+  ]
+}
