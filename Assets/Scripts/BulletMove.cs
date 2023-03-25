@@ -41,12 +41,12 @@ public class BulletMove : MonoBehaviour
         }
 
         //Reduces Piercing and deletes Bullet
-        if (this.CompareTag("PlayerBullet") && !other.tag.Equals("PlayerBullet") && !other.tag.Equals("Player"))
+        if (this.CompareTag("PlayerBullet") && !other.CompareTag("PlayerBullet") && !other.CompareTag("Player"))
         {
             pierce--;
             if (pierce <= 0)
                 Destroy(gameObject);
-            if (other.tag.Equals("EnemyBullet"))
+            if (other.CompareTag("EnemyBullet"))
                 Destroy(other.gameObject);
         }
     }
