@@ -31,6 +31,11 @@ public class ItemGenerator : MonoBehaviour
         _itemsPerRow = (int)Math.Abs(gridSizeX / _itemSize.x);
         _itemsPerCol = (int)Math.Abs(gridSizeY / _itemSize.y);
         FillGridPositions();
+
+        for (int i = 0; i < _colliderData.Length; i++)
+        {
+            _colliderData[i].Renderer = _colliderData[i].Prefab.GetComponent<SpriteRenderer>();
+        }
     }
 
     private void FillGridPositions()
@@ -65,7 +70,7 @@ public class ItemGenerator : MonoBehaviour
         int gridIndex = UnityEngine.Random.Range(0, _gridPositions.Count);
         Vector2 position = _gridPositions[gridIndex];
 
-        if (_colliderData[index].Prefab.GetComponent<SpriteRenderer>().bounds.size.x > 1)
+        if (_colliderData[index].Renderer.bounds.size.x > 1)
         {
             // breites item würde am Rand spawnen
             if (position.x == _itemsPerRow)
@@ -102,5 +107,7 @@ public class ItemGenerator : MonoBehaviour
     {
         [Range(0, 1)] public float SpawnChange;
         public GameObject Prefab;
+
+        [NonSerialized] public SpriteRenderer Renderer;
     }
 }
