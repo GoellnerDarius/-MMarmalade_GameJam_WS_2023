@@ -1,0 +1,55 @@
+{
+   "q":"Was ist deine finanzielle Situation?",
+   "answers":[
+      {
+         "a":"Ich sitz grad auf heißen Kohlen, mehr kann ich dir leider nicht sagen.",
+         "mood":1,
+         "followup":{
+            "q":"Wie gemein! Du kanst mich doch nicht so im dunkeln stehen lassen.",
+            "answers":[
+               {
+                  "a":"Bei deinem Feuer ist das doch garnicht möglich.",
+                  "mood":1
+               },
+               {
+                  "a":"Solange ich dich nicht im Regen stehen lasse.",
+                  "mood":0
+               },
+               {
+                  "a":"Doch... doch, das kann ich.",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Ich hab kein Geld aber die nächste Bank ist nicht all zu weit ;)",
+         "mood":0
+      },
+      {
+         "a":"Ich lege keinen Wert auf Materialismus, denn die Flamme des Kommunismus brennt in mir!",
+         "mood":-1
+      }
+   ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

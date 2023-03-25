@@ -1,0 +1,34 @@
+{
+   "q":"Liebst du Koks auch so sehr wie ich?",
+   "answers":[
+      {
+         "a":"Ich liebe diesen porösen, stark kohlenstoffhaltigen Brennstoff mit hoher spezifischer Oberfläche <3",
+         "mood":1,
+         "followup":{
+            "q":"Koks is schon voll Holzscheitel. Wollen wirs uns mal zusammen reinkokeln?",
+            "answers":[
+               {
+                  "a":"Etwas Koks, das ist alles was der Hustler braucht. So viel Schnee und Koks, der Club sieht wie Alaska aus. yo",
+                  "mood":1
+               },
+               {
+                  "a":"HELL YEAH! Ein Freund von mir hat das beste Koks in der Stadt.",
+                  "mood":0
+               },
+               {
+                  "a":"Ich würd mir lieber dich reinkokeln.",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Oh ja, ich liebe das brennen in der Nase dabei!",
+         "mood":0
+      },
+      {
+         "a":"Iiiiiiiiiigit ich bin doch kein Junky!",
+         "mood":-1
+      }
+   ]
+}

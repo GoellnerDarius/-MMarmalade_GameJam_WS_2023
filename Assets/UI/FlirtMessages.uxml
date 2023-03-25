@@ -8,15 +8,11 @@
             <ui:ProgressBar value="42" class="progress-bar" style="width: 100%;" />
         </ui:VisualElement>
         <ui:VisualElement name="messages">
-            <ui:Label name="left" text="Lorem ipsum dolor sit amet" />
-            <ui:Label name="right" text="Lorem ipsum dolor sit amet" />
-            <ui:Label name="left" text="Lorem ipsum dolor sit amet" />
-            <ui:Label name="right" text="Lorem ipsum dolor sit amet" />
         </ui:VisualElement>
         <ui:VisualElement name="answers">
-            <ui:Button text="Answer 1" />
-            <ui:Button text="Answer 2" />
-            <ui:Button text="Answer 3" />
+            <ui:Button text="Answer 1" name="a1" />
+            <ui:Button text="Answer 2" name="a2" />
+            <ui:Button text="Answer 3" name="a3" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
