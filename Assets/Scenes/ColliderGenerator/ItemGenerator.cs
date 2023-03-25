@@ -60,9 +60,31 @@ public class ItemGenerator : MonoBehaviour
         // float y = _startPoint.position.y + UnityEngine.Random.Range(0, _itemsPerCol) * _itemSize.y;
         // float x = _startPoint.position.x + UnityEngine.Random.Range(0, _itemsPerRow) * _itemSize.x;
 
+        int index = UnityEngine.Random.Range(0, _colliderData.Length);
+
         int gridIndex = UnityEngine.Random.Range(0, _gridPositions.Count);
         Vector2 position = _gridPositions[gridIndex];
-        _gridPositions.RemoveAt(gridIndex);
+
+        if (_colliderData[index].Prefab.GetComponent<SpriteRenderer>().bounds.size.x > 1)
+        {
+            // breites item würde am Rand spawnen
+            if (position.x == _itemsPerRow)
+            {
+                if (!_gridPositions.Contains(position - new Vector2(-1, 0)))
+                {
+                    _gridPositions.Clear();
+                    FillGridPositions();
+                }
+
+                position -= new Vector2(-1, 0);
+            }
+
+            _gridPositions.Remove(position + new Vector2(1, 0));
+        }
+        else
+        {
+            _gridPositions.RemoveAt(gridIndex);
+        }
 
         if (_gridPositions.Count == 0)
         {
@@ -71,14 +93,6 @@ public class ItemGenerator : MonoBehaviour
 
         float x = _startPoint.position.x + position.x * _itemSize.x;
         float y = _startPoint.position.y + position.y * _itemSize.y;
-
-        int index = UnityEngine.Random.Range(0, _colliderData.Length);
-
-        if (_colliderData[index].Prefab.GetComponent<SpriteRenderer>().bounds.size.x > 1)
-        {
-            _gridPositions.Remove(position + new Vector2(1, 0));
-            Debug.Log("Position: " + position + ", Position 2: " + (position + new Vector2(1, 0)));
-        }
 
         var newCollider = Instantiate(_colliderData[index].Prefab, new Vector2(x, y), Quaternion.identity, _colliders.transform);
     }
