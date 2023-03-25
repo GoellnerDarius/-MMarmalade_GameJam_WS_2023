@@ -18,6 +18,8 @@ public class ItemGenerator : MonoBehaviour
     private int _itemsPerCol;
     private float _spawnCounter;
 
+    private List<Vector2> _gridPositions = new List<Vector2>();
+
     private void Start()
     {
         // _colSize = (int)(Mathf.Abs(_endPoint.y - _startPoint.y) / _itemsPerRow);
@@ -26,8 +28,20 @@ public class ItemGenerator : MonoBehaviour
         // No Math.Abs to get the "direction" for the case when end - start is negative (due to vector position)
         float gridSizeX = _endPoint.position.x - _startPoint.position.x;
         float gridSizeY = _endPoint.position.y - _startPoint.position.y;
-        _itemsPerRow = (int)(gridSizeX / _itemSize.x);
-        _itemsPerCol = (int)(gridSizeY / _itemSize.y);
+        _itemsPerRow = (int)Math.Abs(gridSizeX / _itemSize.x);
+        _itemsPerCol = (int)Math.Abs(gridSizeY / _itemSize.y);
+        FillGridPositions();
+    }
+
+    private void FillGridPositions()
+    {
+        for (int row = 0; row <= _itemsPerCol; row++)
+        {
+            for (int col = 0; col <= _itemsPerRow; col++)
+            {
+                _gridPositions.Add(new Vector2(col, row));
+            }
+        }
     }
 
     private void Update()
@@ -43,10 +57,28 @@ public class ItemGenerator : MonoBehaviour
 
     private void SpawnCollider()
     {
-        float y = _startPoint.position.y + UnityEngine.Random.Range(0, _itemsPerCol) * _itemSize.y;
-        float x = _startPoint.position.x + UnityEngine.Random.Range(0, _itemsPerRow) * _itemSize.x;
+        // float y = _startPoint.position.y + UnityEngine.Random.Range(0, _itemsPerCol) * _itemSize.y;
+        // float x = _startPoint.position.x + UnityEngine.Random.Range(0, _itemsPerRow) * _itemSize.x;
+
+        int gridIndex = UnityEngine.Random.Range(0, _gridPositions.Count);
+        Vector2 position = _gridPositions[gridIndex];
+        _gridPositions.RemoveAt(gridIndex);
+
+        if (_gridPositions.Count == 0)
+        {
+            FillGridPositions();
+        }
+
+        float x = _startPoint.position.x + position.x * _itemSize.x;
+        float y = _startPoint.position.y + position.y * _itemSize.y;
 
         int index = UnityEngine.Random.Range(0, _colliderData.Length);
+
+        if (_colliderData[index].Prefab.GetComponent<SpriteRenderer>().bounds.size.x > 1)
+        {
+            _gridPositions.Remove(position + new Vector2(1, 0));
+            Debug.Log("Position: " + position + ", Position 2: " + (position + new Vector2(1, 0)));
+        }
 
         var newCollider = Instantiate(_colliderData[index].Prefab, new Vector2(x, y), Quaternion.identity, _colliders.transform);
     }
