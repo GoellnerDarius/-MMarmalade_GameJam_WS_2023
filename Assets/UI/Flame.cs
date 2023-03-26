@@ -8,6 +8,8 @@ public class Flame : ScriptableObject
 {
     public string Name;
 
+    public int Age;
+
     public Texture2D[] Images;
 
     public bool isMatch;

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Ash
   m_EditorClassIdentifier: 
   Name: Ash
+  Age: 569
   Images:
   - {fileID: 2800000, guid: 33e7e7fae80084a9f9309d7178ab7d76, type: 3}
   - {fileID: 2800000, guid: 1a43c64ab7f1f4b6883fc7af44077eb4, type: 3}
   - {fileID: 2800000, guid: a570be66e462543368de5423bb2837a7, type: 3}
+  isMatch: 1
