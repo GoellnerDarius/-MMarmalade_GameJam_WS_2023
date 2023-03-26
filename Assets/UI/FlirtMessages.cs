@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.IO;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class FlirtMessages : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class FlirtMessages : MonoBehaviour
     public System.Random random = new System.Random();
 
     public int temperature = 50;
+
+    public Label typingIndicator;
 
     //Add logic that interacts with the UI controls in the `OnEnable` methods
     private void OnEnable()
@@ -43,11 +46,12 @@ public class FlirtMessages : MonoBehaviour
         // INIT UI
         document.rootVisualElement.Q<Image>("profile-picture").style.backgroundImage = new StyleBackground(flame.Images[1]);
         document.rootVisualElement.Q<ProgressBar>("temperature").value = temperature;
+        document.rootVisualElement.Q<VisualElement>("bubbles").style.opacity = 0;
 
         SetNextDialog();
     }
 
-    public void SetNextDialog()
+    public async void SetNextDialog()
     {
         if (prevDialogs.Count < dialogs.Count)
         {
@@ -56,7 +60,7 @@ public class FlirtMessages : MonoBehaviour
                 currentDialog = dialogs[random.Next(dialogs.Count)];
             } while (prevDialogs.Contains(currentDialog));
             prevDialogs.Add(currentDialog);
-            AddQuestion(currentDialog.q);
+            await AddQuestion(currentDialog.q);
             UpdateAnswers(currentDialog.answers);
         }
         else
@@ -65,12 +69,40 @@ public class FlirtMessages : MonoBehaviour
         }
     }
 
-    public void AddQuestion(string question)
+    public async Task AddQuestion(string question)
     {
         Label label = new Label();
         label.AddToClassList("left");
         label.text = question;
-        document.rootVisualElement.Q<VisualElement>("messages").Insert(0, label);
+        AnimateTyping();
+        await WaitSecondsAsync(3);
+        typingIndicator.style.display = DisplayStyle.None;
+        document.rootVisualElement.Q<VisualElement>("messages").Insert(1, label);
+    }
+
+    private void AnimateTyping()
+    {
+        typingIndicator = document.rootVisualElement.Q<Label>("typing-indicator");
+        typingIndicator.style.display = DisplayStyle.Flex;
+        typingIndicator.style.opacity = 1;
+        typingIndicator.Query(className: "circle")
+                     .ForEach(async (element) =>
+                     {
+                         while (typingIndicator.style.display == DisplayStyle.Flex)
+                         {
+                             Debug.Log(element);
+                             element.style.opacity = 0.2f;
+                             await WaitSecondsAsync(1f);
+                             element.style.opacity = 0.5f;
+                             await WaitSecondsAsync(1f);
+                         }
+                     });
+    }
+
+    private async Task WaitSecondsAsync(float seconds)
+    {
+        await Task.Delay(TimeSpan.FromSeconds(seconds));
+        Debug.Log("Finished waiting.");
     }
 
     public void AddAnswer(string answer)
@@ -78,11 +110,13 @@ public class FlirtMessages : MonoBehaviour
         Label label = new Label();
         label.AddToClassList("right");
         label.text = answer;
-        document.rootVisualElement.Q<VisualElement>("messages").Insert(0, label);
+        document.rootVisualElement.Q<VisualElement>("messages").Insert(1, label);
     }
 
     public void UpdateAnswers(Answer[] answers)
     {
+        Debug.Log("Update answers");
+        document.rootVisualElement.Q<VisualElement>("bubbles").style.opacity = 1;
         document.rootVisualElement.Q<Button>("a1").UnregisterCallback<ClickEvent, Answer>(AnswerClicked);
         document.rootVisualElement.Q<Button>("a2").UnregisterCallback<ClickEvent, Answer>(AnswerClicked);
         document.rootVisualElement.Q<Button>("a3").UnregisterCallback<ClickEvent, Answer>(AnswerClicked);
@@ -95,8 +129,9 @@ public class FlirtMessages : MonoBehaviour
         document.rootVisualElement.Q<Button>("a3").RegisterCallback<ClickEvent, Answer>(AnswerClicked, answers[2]);
     }
 
-    private void AnswerClicked(ClickEvent evt, Answer answer)
+    private async void AnswerClicked(ClickEvent evt, Answer answer)
     {
+        document.rootVisualElement.Q<VisualElement>("bubbles").style.opacity = 0;
         AddAnswer(answer.a);
         if(answer.mood == 1 || answer.mood == 0)
         {
@@ -114,7 +149,7 @@ public class FlirtMessages : MonoBehaviour
         {
             Debug.Log(answer.followup);
             Debug.Log(answer.followup.q);
-            AddQuestion(answer.followup.q);
+            await AddQuestion(answer.followup.q);
             UpdateAnswers(answer.followup.answers);
         } else
         {
