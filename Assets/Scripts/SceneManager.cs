@@ -37,7 +37,7 @@ public class SceneManager : MonoBehaviour
     public Image Girl;
     private Color BlackScreenComponents;
     private Color PeopleColor = new Color(255, 255, 255, 0);
-    private Color InvisibleColor = new Color(255, 255, 255, 0);
+    private Color InvisibleColor = new Color(0, 0, 0, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -66,12 +66,17 @@ public class SceneManager : MonoBehaviour
 
         if (Gamestarted == false && StoryTellState == true)
         {
+            BlackText_center.text = "";
+            BottomTextbox.SetActive(false);
             Startgame();
         }
     }
     public void Startgame()
     {
         Fadeouttime -= Time.deltaTime;
+        BackgroundImage.color = InvisibleColor;
+        Dude.color = InvisibleColor;
+        Girl.color = InvisibleColor;
         if (BlackScreenComponents.a > 0 && Fadeouttime < 0)
         {
             BlackScreenComponents.a -= Time.deltaTime;
@@ -89,8 +94,7 @@ public class SceneManager : MonoBehaviour
             ItemGenerator.SetActive(true);
             ItemMover.SetActive(true);
             TileMover.SetActive(true);
-            BlackText_center.text = "";
-            BottomTextbox.SetActive(false);
+
             Gamestarted = true;
         }
     }
@@ -99,7 +103,7 @@ public class SceneManager : MonoBehaviour
         PreStoryTime -= Time.deltaTime;
         if(BackgroundImage.color.a < 1 && PreStoryTime < 0)
         {
-            Debug.Log(BackgroundImage.color.a);
+            //Debug.Log(BackgroundImage.color.a);
             BlackScreenComponents = BackgroundImage.color;
             BlackScreenComponents.a += 0.5f * Time.deltaTime;
             PeopleColor.a += 0.5f * Time.deltaTime;
