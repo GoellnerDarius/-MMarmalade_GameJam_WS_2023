@@ -45,6 +45,7 @@ public class FlirtSwipe : MonoBehaviour
         if (flames[currentFlame].isMatch)
         {
             navigate.Invoke(flames[currentFlame]);
+            Share.Flame = flames[currentFlame];
         } else
         {
             Skip();
