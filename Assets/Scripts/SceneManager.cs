@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
+using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.WSA;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using static UnityEditor.PlayerSettings;
 
 public class SceneManager : MonoBehaviour
 {
@@ -26,8 +32,9 @@ public class SceneManager : MonoBehaviour
     private bool Gamestarted = false;
     private bool StoryTellState = false;
     private int StoryCount = 0;
-    private string[] StoryText = {"a","b","c","d","e","f","g" };
-    private string[] Speakers = { "Sam", "Ash", "Copper" };
+    private int Speakernum = 0;
+    private string[] StoryText = {"Hey Flamme. Wartest du auf jemanden?","Ähm ja… was willst du von mir?","Ach sag bloß du erkennst mich nicht?","Ich wüsste nicht warum ich einen Feuerwehrmann kennen sollte… warte… dieser Schnauzer…","Ganz genau du dachtest du würdest auf dein Date warten, aber es war ich Feuerwehrmann Sam all along!","Das war mal wieder ein Schuss in den Ofen *läuft weg*" };
+    private string[] Speakers = {"Feuerwehrmann","Flamme"};
     public Text BlackText_center;
     public Text StoryText_bottom;
     public Text Speaker;
@@ -96,6 +103,7 @@ public class SceneManager : MonoBehaviour
             ItemGenerator.SetActive(true);
             ItemMover.SetActive(true);
             TileMover.SetActive(true);
+            Controls.SetActive(false);
 
             Gamestarted = true;
         }
@@ -125,10 +133,19 @@ public class SceneManager : MonoBehaviour
                 {
                     StoryReadTime = Storydelay;
                     StoryCount++;
+                    Speaker.text = Speakers[Speakernum] + ":";
                     StoryText_bottom.text = StoryText[StoryCount];
                     if(StoryCount + 1 >= StoryText.Length)
                     {
                         StoryTellState = true;  
+                    }
+                    if(Speakernum == 0)
+                    {
+                        Speakernum = 1;
+                    }
+                    else
+                    {
+                        Speakernum = 0;
                     }
                 }
             }
