@@ -173,6 +173,7 @@ public class PlayerShooter : MonoBehaviour
 
         if (lifes == 0)
         {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
             Destroy(gameObject);
         }
     }

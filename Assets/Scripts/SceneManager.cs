@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
+using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.WSA;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using static UnityEditor.PlayerSettings;
 
 public class SceneManager : MonoBehaviour
 {
@@ -15,6 +21,7 @@ public class SceneManager : MonoBehaviour
     public GameObject ItemMover;
     public GameObject TileMover;
     public GameObject BottomTextbox;
+    public GameObject Controls;
 
     public float Storydelay = 5;
     public float FadeToGameTime = 5;
@@ -25,13 +32,14 @@ public class SceneManager : MonoBehaviour
     private bool Gamestarted = false;
     private bool StoryTellState = false;
     private int StoryCount = 0;
-    private string[] StoryText = {"a","b","c","d","e","f","g" };
-    private string[] Speakers = {"Sam","Ash","Copper"};
-
+    private int Speakernum = 0;
+    private string[] StoryText = {"Hey Flamme. Wartest du auf jemanden?","Ähm ja… was willst du von mir?","Ach sag bloß du erkennst mich nicht?","Ich wüsste nicht warum ich einen Feuerwehrmann kennen sollte… warte… dieser Schnauzer…","Ganz genau du dachtest du würdest auf dein Date warten, aber es war ich Feuerwehrmann Sam all along!","Das war mal wieder ein Schuss in den Ofen *läuft weg*" };
+    private string[] Speakers = {"Feuerwehrmann","Flamme"};
     public Text BlackText_center;
     public Text StoryText_bottom;
     public Text Speaker;
     public Image Blackscreen;
+
     public Image BackgroundImage;
     public Image Dude;
     public Image Girl;
@@ -59,7 +67,7 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(StoryTellState == false)
+        if (StoryTellState == false)
         {
             Tellstory();
         }
@@ -77,6 +85,7 @@ public class SceneManager : MonoBehaviour
         BackgroundImage.color = InvisibleColor;
         Dude.color = InvisibleColor;
         Girl.color = InvisibleColor;
+        Controls.SetActive(true);
         if (BlackScreenComponents.a > 0 && Fadeouttime < 0)
         {
             BlackScreenComponents.a -= Time.deltaTime;
@@ -94,6 +103,7 @@ public class SceneManager : MonoBehaviour
             ItemGenerator.SetActive(true);
             ItemMover.SetActive(true);
             TileMover.SetActive(true);
+            Controls.SetActive(false);
 
             Gamestarted = true;
         }
@@ -101,7 +111,7 @@ public class SceneManager : MonoBehaviour
     public void Tellstory()
     {
         PreStoryTime -= Time.deltaTime;
-        if(BackgroundImage.color.a < 1 && PreStoryTime < 0)
+        if (BackgroundImage.color.a < 1 && PreStoryTime < 0)
         {
             //Debug.Log(BackgroundImage.color.a);
             BlackScreenComponents = BackgroundImage.color;
@@ -113,20 +123,29 @@ public class SceneManager : MonoBehaviour
         }
         else
         {
-            if(PreStoryTime < 0)
+            if (PreStoryTime < 0)
             {
-               // Debug.Log("Activate Textbox");
+                // Debug.Log("Activate Textbox");
                 StoryText_bottom.text = StoryText[StoryCount];
-                BottomTextbox.SetActive(true); 
+                BottomTextbox.SetActive(true);
                 StoryReadTime -= Time.deltaTime;
-                if(StoryReadTime < 0)
+                if (StoryReadTime < 0)
                 {
                     StoryReadTime = Storydelay;
                     StoryCount++;
+                    Speaker.text = Speakers[Speakernum] + ":";
                     StoryText_bottom.text = StoryText[StoryCount];
-                    if(StoryCount + 1 >= StoryText.Length)
+                    if (StoryCount + 1 >= StoryText.Length)
                     {
-                        StoryTellState = true;  
+                        StoryTellState = true;
+                    }
+                    if(Speakernum == 0)
+                    {
+                        Speakernum = 1;
+                    }
+                    else
+                    {
+                        Speakernum = 0;
                     }
                 }
             }
