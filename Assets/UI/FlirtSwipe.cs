@@ -18,8 +18,7 @@ public class FlirtSwipe : MonoBehaviour
         var uiDocument = GetComponent<UIDocument>();
         document = GetComponent<UIDocument>();
 
-        uiDocument.rootVisualElement.Q<Image>("profile-picture").style.backgroundImage = new StyleBackground(flames[0].Images[1]);
-        uiDocument.rootVisualElement.Q<Label>("name").text = flames[0].Name;
+        UpdateProfile();
 
         uiDocument.rootVisualElement.Q<Button>("match").RegisterCallback<ClickEvent, VisualElement>(MatchClicked, uiDocument.rootVisualElement);
         uiDocument.rootVisualElement.Q<Button>("skip").RegisterCallback<ClickEvent, VisualElement>(SkipClicked, uiDocument.rootVisualElement);
@@ -48,6 +47,7 @@ public class FlirtSwipe : MonoBehaviour
         document.rootVisualElement.Q<Image>("profile-picture").style.backgroundImage = new StyleBackground(flames[currentFlame].Images[1]);
 
         document.rootVisualElement.Q<Label>("name").text = flames[currentFlame].Name;
+        document.rootVisualElement.Q<Label>("age").text = "Age: " + flames[currentFlame].Age.ToString();
     }
 
     private void OnDisable()
