@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Layout.uss?fileID=7433441132597879392&amp;guid=803ae7056e71243e89f272c89c67cb8f&amp;type=3#Layout" />
     <Style src="project://database/Assets/UI/FlirtMessages.uss?fileID=7433441132597879392&amp;guid=4a69f611ce66442818d68b80e1dc3f33&amp;type=3#FlirtMessages" />
-    <ui:VisualElement name="VisualElement" style="flex-direction: row; height: 100%; -unity-font-definition: url(&apos;project://database/Assets/Fonts/slkscr%20SDF.asset?fileID=11400000&amp;guid=5263167ed17f84361bcf2a0993b2f6a7&amp;type=2#slkscr SDF&apos;);">
+    <ui:VisualElement name="VisualElement" style="flex-direction: row; height: 100%; -unity-font-definition: url(&apos;project://database/Assets/Fonts/slkscr%20SDF.asset?fileID=11400000&amp;guid=5263167ed17f84361bcf2a0993b2f6a7&amp;type=2#slkscr SDF&apos;); background-image: url(&apos;project://database/Assets/UI/Images/background_2_ui.png?fileID=2800000&amp;guid=d4202c2ab985c42d6af5618a75d8c61a&amp;type=3#background_2_ui&apos;);">
         <ui:VisualElement name="bubbles" style="flex-grow: 1;">
             <ui:Button name="a1" class="bubble" />
             <ui:Button name="a2" class="bubble bubble-mirrored" />

@@ -72,7 +72,15 @@ public class FlirtMessages : MonoBehaviour
         else
         {
             Debug.Log("Flirting finished");
-            // TODO: Start minigame with score
+            if (temperature >= 100)
+            {
+                Share.Score = temperature;
+                // TODO: Navigate to new scene
+            }
+            else
+            {
+                // Navigate to gameover
+            }
         }
     }
 
