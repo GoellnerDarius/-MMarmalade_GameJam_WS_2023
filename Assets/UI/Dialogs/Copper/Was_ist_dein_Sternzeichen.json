@@ -1,0 +1,34 @@
+{
+   "q":"Was ist dein Sternzeichen?",
+   "answers":[
+      {
+         "a":"Widder",
+         "mood":1,
+         "followup":{
+            "q":"OMG ich auch! Kennst du dich auch mit Astrologie aus?",
+            "answers":[
+               {
+                  "a":"Ich bin eig. sogar trippel fire sign und als Widder sunsight wär ich emotional aber zvillinge bin ich eher so unemotional und trocken...!",
+                  "mood":1
+               },
+               {
+                  "a":"Hab schonmal davon gehört...",
+                  "mood":0
+               },
+               {
+                  "a":"HAHAHAHA",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Jungfrau",
+         "mood":0
+      },
+      {
+         "a":"Wassermann",
+         "mood":-1
+      }
+   ]
+}

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flames:
   - {fileID: 11400000, guid: 9959794216ea64aa1b7faf7df3ede8cd, type: 2}
-  - {fileID: 11400000, guid: 43d09e5a8ad704900be0008c9923f2f8, type: 2}
+  - {fileID: 11400000, guid: ccfd2989d02c843b8ae8b3b95f09d3f5, type: 2}
 --- !u!1 &107914727
 GameObject:
   m_ObjectHideFlags: 0

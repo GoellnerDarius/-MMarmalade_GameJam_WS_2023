@@ -71,15 +71,21 @@ public class FlirtMessages : MonoBehaviour
         }
         else
         {
-            Debug.Log("Flirting finished");
             if (temperature >= 100)
             {
                 Share.Score = temperature;
-                // TODO: Navigate to new scene
+                await AddQuestion("Treffen wir uns?");
+                await WaitSecondsAsync(2);
+                AddAnswer("Ja klar!");
+                await WaitSecondsAsync(1);
+                document.rootVisualElement.Q<VisualElement>("overlay").style.display = DisplayStyle.Flex;
+                document.rootVisualElement.Q<VisualElement>("overlay").style.opacity = 1;
+                await WaitSecondsAsync(2);
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Goellner_Test");
             }
             else
             {
-                // Navigate to gameover
+                UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
             }
         }
     }
@@ -147,13 +153,11 @@ public class FlirtMessages : MonoBehaviour
         AddAnswer(answer.a);
         if(answer.mood == 1 || answer.mood == 0)
         {
-            if(answer.mood == 0 && isFollowup) {
-                Debug.Log("medium");
+            if (answer.mood == 0 && isFollowup) {
                 temperature += 5;
             } else { 
                 temperature += 10;
                 if(answer.mood == 1) {
-                    Debug.Log("happy");
                     ChangeFace(Reaction.happy);
                 }
             }
@@ -165,18 +169,14 @@ public class FlirtMessages : MonoBehaviour
             ChangeFace(Reaction.neutral);
         }
         UpdateTemperature();
-        Debug.Log(answer.followup);
-        Debug.Log(answer.followup.q);
         if (answer.mood == 1 && answer.followup != null && answer.followup.q != null)
         {
-            Debug.Log("follow up");
             isFollowup = true;
             await AddQuestion(answer.followup.q);
             ChangeFace(Reaction.neutral);
             UpdateAnswers(answer.followup.answers);
         } else
         {
-            Debug.Log("next question");
             isFollowup = false;
             SetNextDialog();
         }

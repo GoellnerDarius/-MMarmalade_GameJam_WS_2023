@@ -1,0 +1,34 @@
+{
+   "q":"Was ist dein tiefstes Geheimnis?",
+   "answers":[
+      {
+         "a":"Ich bin in echt ein Feuerwehrmann, der versucht auf dieser App ahnunglose Flammen zu jagen.",
+         "mood":1,
+         "followup":{
+            "q":"Hahaha das war ein guter witz, ge? ",
+            "answers":[
+               {
+                  "a":"Das wirst du wohl bei einem Treffen herausfinden müssen :)",
+                  "mood":1
+               },
+               {
+                  "a":"Haha ja voll, da hast du mich wohl durchschaut ;)",
+                  "mood":0
+               },
+               {
+                  "a":"...",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Ich sammel in meiner Freizeit Peitschen, irgendwie geben sie mir ein gewisses gefühl...",
+         "mood":0
+      },
+      {
+         "a":"Ich hab eine Koks addiction.",
+         "mood":-1
+      }
+   ]
+}
