@@ -1,0 +1,34 @@
+{
+   "q":"Was machst du in deiner Freizeit?",
+   "answers":[
+      {
+         "a":"Ich kümmere mich besonders gerne um meinen Feuersalamander Chili.",
+         "mood":1,
+         "followup":{
+            "q":"OMG! Ich hab auch einen Feueresalamander, vllt können sie sich ja mal treffen?",
+            "answers":[
+               {
+                  "a":"Oha ich hatte noch nie ein Doppeldate, klingt nach Spaß :)",
+                  "mood":1
+               },
+               {
+                  "a":"Ich bin Feuer und Flamme für die Idee!",
+                  "mood":0
+               },
+               {
+                  "a":"Wie kommst du darauf, dass sich dein MINDERWERTIGER Feuersalamander mit meinem Chili... treffen dürfte.",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Ich investe in meiner Freizeit natürlich in NFTs und Krypto währungen, denn um richtig reich zu werden MUSST DU dir ein passives EInkommen erschaffen. ALSO KOMM IN DIE WHATSAPP GRUPPE +12 3456 678!!!",
+         "mood":0
+      },
+      {
+         "a":"Duschen...",
+         "mood":-1
+      }
+   ]
+}

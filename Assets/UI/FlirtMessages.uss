@@ -14,6 +14,7 @@
     padding: 5px;
     flex-grow: 1;
     flex-direction: column-reverse;
+    overflow: hidden;
 }
 
 #messages Label {
@@ -26,7 +27,7 @@
     opacity:0.90;
 }
 
-#messages #left {
+#messages .left {
     background-color: #fb923c;
     border-color: #ea580c;
     border-width: 1px;
@@ -34,7 +35,7 @@
     margin-right: auto;
 }
 
-#messages #right {
+#messages .right {
     background-color: #fafafa;
     border-color: #a1a1aa;
     border-width: 1px;

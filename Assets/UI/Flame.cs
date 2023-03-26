@@ -9,4 +9,6 @@ public class Flame : ScriptableObject
     public string Name;
 
     public Texture2D[] Images;
+
+    public bool isMatch;
 }
