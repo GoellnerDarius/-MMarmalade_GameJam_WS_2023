@@ -15,6 +15,7 @@
     flex-grow: 1;
     flex-direction: column-reverse;
     overflow: hidden;
+    margin-bottom: 4px;
 }
 
 #messages Label {
@@ -22,7 +23,7 @@
     white-space: normal;
     width: 75%;
     margin-top: 3px;
-    margin-bottom: 3px;
+    margin-bottom: 8px;
     padding: 3px 6px;
     opacity:0.90;
 }
@@ -43,21 +44,12 @@
     margin-left: auto;
 }
 
-#answers {
-    width: 100%;
-    padding: 10px;
-}
-
-#answers Button {
-    margin: 3px 2px;
-    background-color: #fed7aa;
-    color: #ea580c;
-    border-radius: 16px;
-    border-color: #ea580c;
-    padding: 3px 0;
-    font-size: 18px;
-    -unity-font-style: bold;
-    border-width: 1.5px;
+#messages .circle {
+    margin: 2px 2px;
+    border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; width: 14px; height: 14px;
+    background-color: black;
+    border-width: 0px;
+    transition: opacity 1s ease-in-out;
 }
 
 .progress-bar {
@@ -85,4 +77,36 @@
     border-color: #ef4444;
     background-color: #7f1d1d;
     height:24px;
+}
+
+#bubbles {
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+}
+
+#bubbles Button {
+    transition: all 0.25s ease-out;
+    background-color: transparent;
+    width: 300px;
+    height: 175px;
+    font-size: 16px;
+    border-width: 0px;
+    white-space: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.bubble {
+    background-image: url("project://database/Assets/UI/Images/NormalBubble.png");
+    padding: 10px 18px 10px 36px;
+}
+
+.bubble-mirrored {
+    background-image: url("project://database/Assets/UI/Images/MirroredBubble.png");
+    margin-left: auto;
+    padding: 10px 36px 10px 18px;
+}
+
+.bubble:hover, .bubble-mirrored:hover {
+    scale: 1.05;
 }
