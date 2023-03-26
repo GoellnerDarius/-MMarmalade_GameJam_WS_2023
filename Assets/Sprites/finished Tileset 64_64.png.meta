@@ -1,0 +1,1003 @@
+fileFormatVersion: 2
+guid: eb2aae42a5442d54cb831c312e17330b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: finished Tileset 64_64_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce6ff736d2788c46a6dee2856809ae0
+      internalID: -1639391683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24a93178e4f06649b3f79de65bce426
+      internalID: 2094308713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd708b02c0e7b547a235672c664bba1
+      internalID: -825364875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_3
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948fa774d67fbba428d516e94b9b053d
+      internalID: 1696015110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_4
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa6fc47d9888e94bb2ff9f6c9ad73fc
+      internalID: -1660098907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_5
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945fb5a1c5c73924f83fcada7b85ee19
+      internalID: 1513976357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_6
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06970de7eeba3fa47919512096b8a14a
+      internalID: 795591236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_7
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb2986cb5fbaff42bceff050d956017
+      internalID: -2055255485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_8
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 2076
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdab97904cbe3f4596d695361d867be
+      internalID: 948886997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021fd0e46d1b3f34bba97d912f51b17e
+      internalID: -54691853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_10
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f574eaa4feadc4342b669d377f2bcb17
+      internalID: -902397999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_11
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b14f879910f7b48ab5e6f7173a59c2
+      internalID: -1312985040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_12
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9cf4715cfa2fa49a646618746814f6
+      internalID: -1255889532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_13
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f79b72b8ef0c94da05fcc1e8c9302b
+      internalID: -630046580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_14
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573ecec58c43f884794d94bdccd47981
+      internalID: 590812934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_15
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c8f5a482b4a464c840887519a2138f
+      internalID: -72882365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_16
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327895d439c0ed34db64c5168cf2056b
+      internalID: 1518483821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_17
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1992
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db39aae3a8fba1b4d917683e024d2e03
+      internalID: 1130796866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_18
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e7ed7aaf35c934eb1ef39c752a9cb7
+      internalID: 1028014598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_19
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a9c0e970dbede4bab204ffac436887
+      internalID: -1157066633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_20
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e27c824b87d0024daa0e9e70e330f00
+      internalID: 1026873757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_21
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05abb57154fb35740ad7f9c63f0fb8c4
+      internalID: 1186601166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_22
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597d0c08e968bca44a5fa62e0c59135c
+      internalID: -1802275205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_23
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73dbfed74ab9aa6489b2d8c48a8cfa78
+      internalID: -393360425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_24
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331da32cee21b814cae67d36fe26d796
+      internalID: 456114330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_25
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7edef6379984d704aa6e8491a0488ccd
+      internalID: 746466138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_26
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1908
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32de09414390af7469fe682bb2d7b767
+      internalID: 1993425766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_27
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac37ed3b769415b49a67bbc260190e46
+      internalID: 1868484398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_28
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4e13a1d6ea20d47aa8a48b16303a33
+      internalID: -2079748755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_29
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bde3d29630419a4391b0585e1b00628
+      internalID: -1707703246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_30
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1937609233ba0c942bca48764ebf6142
+      internalID: 511459504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_31
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9506be46d52b1c458aa46eb961aa72c
+      internalID: 784473821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_32
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87434d79037b95d428557c88733f2a84
+      internalID: 1181685557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_33
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b28d1ba2db6d53428217141787d73a6
+      internalID: -272635342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_34
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea34f49a1ad1784a93945658c89dec3
+      internalID: 708356117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_35
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1824
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b5de86c51a88248852d19d5d026a7c
+      internalID: -1446094797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_36
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1740
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736673869e46e61488450d2eb57cbf82
+      internalID: -1602696879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_37
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1740
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e788f3e6a14586a4bbab8487291115d7
+      internalID: -488184423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_38
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1740
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6092003610744549914008b422d758c
+      internalID: 1338339240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished Tileset 64_64_39
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1740
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a79bf4296422da40a513d6d582f0b43
+      internalID: 1933611387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      finished Tileset 64_64_0: -1639391683
+      finished Tileset 64_64_1: 2094308713
+      finished Tileset 64_64_10: -902397999
+      finished Tileset 64_64_11: -1312985040
+      finished Tileset 64_64_12: -1255889532
+      finished Tileset 64_64_13: -630046580
+      finished Tileset 64_64_14: 590812934
+      finished Tileset 64_64_15: -72882365
+      finished Tileset 64_64_16: 1518483821
+      finished Tileset 64_64_17: 1130796866
+      finished Tileset 64_64_18: 1028014598
+      finished Tileset 64_64_19: -1157066633
+      finished Tileset 64_64_2: -825364875
+      finished Tileset 64_64_20: 1026873757
+      finished Tileset 64_64_21: 1186601166
+      finished Tileset 64_64_22: -1802275205
+      finished Tileset 64_64_23: -393360425
+      finished Tileset 64_64_24: 456114330
+      finished Tileset 64_64_25: 746466138
+      finished Tileset 64_64_26: 1993425766
+      finished Tileset 64_64_27: 1868484398
+      finished Tileset 64_64_28: -2079748755
+      finished Tileset 64_64_29: -1707703246
+      finished Tileset 64_64_3: 1696015110
+      finished Tileset 64_64_30: 511459504
+      finished Tileset 64_64_31: 784473821
+      finished Tileset 64_64_32: 1181685557
+      finished Tileset 64_64_33: -272635342
+      finished Tileset 64_64_34: 708356117
+      finished Tileset 64_64_35: -1446094797
+      finished Tileset 64_64_36: -1602696879
+      finished Tileset 64_64_37: -488184423
+      finished Tileset 64_64_38: 1338339240
+      finished Tileset 64_64_39: 1933611387
+      finished Tileset 64_64_4: -1660098907
+      finished Tileset 64_64_5: 1513976357
+      finished Tileset 64_64_6: 795591236
+      finished Tileset 64_64_7: -2055255485
+      finished Tileset 64_64_8: 948886997
+      finished Tileset 64_64_9: -54691853
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

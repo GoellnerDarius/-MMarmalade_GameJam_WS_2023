@@ -1,16 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using TMPro;
-using Unity.Burst.Intrinsics;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.SearchService;
+
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.WSA;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
-using static UnityEditor.PlayerSettings;
 
 public class SceneManager : MonoBehaviour
 {
@@ -33,7 +23,7 @@ public class SceneManager : MonoBehaviour
     private bool StoryTellState = false;
     private int StoryCount = 0;
     private int Speakernum = 0;
-    private string[] StoryText = {"Hey Flamme. Wartest du auf jemanden?","Ähm ja… was willst du von mir?","Ach sag bloß du erkennst mich nicht?","Ich wüsste nicht warum ich einen Feuerwehrmann kennen sollte… warte… dieser Schnauzer…","Ganz genau du dachtest du würdest auf dein Date warten, aber es war ich Feuerwehrmann Sam all along!","Das war mal wieder ein Schuss in den Ofen *läuft weg*" };
+    private string[] StoryText = {"Hey Flamme. Wartest du auf jemanden?","ï¿½hm jaï¿½ was willst du von mir?","Ach sag bloï¿½ du erkennst mich nicht?","Ich wï¿½sste nicht warum ich einen Feuerwehrmann kennen sollteï¿½ warteï¿½ dieser Schnauzerï¿½","Ganz genau du dachtest du wï¿½rdest auf dein Date warten, aber es war ich Feuerwehrmann Sam all along!","Das war mal wieder ein Schuss in den Ofen *lï¿½uft weg*" };
     private string[] Speakers = {"Feuerwehrmann","Flamme"};
     public Text BlackText_center;
     public Text StoryText_bottom;
