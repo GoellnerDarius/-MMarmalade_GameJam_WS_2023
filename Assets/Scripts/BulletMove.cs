@@ -30,7 +30,7 @@ public class BulletMove : MonoBehaviour
 
     private void Collided(Collider2D other)
     {
-        Debug.Log(tag + " collides with " + other.tag, gameObject);
+        // Debug.Log(tag + " collides with " + other.tag, gameObject);
 
         if (this.CompareTag("EnemyBullet") && !other.CompareTag("EnemyBullet") && !other.CompareTag("Enemy"))
         {

@@ -12,11 +12,11 @@ public class MoveTileMap : MonoBehaviour
     {
         for (int i = 0; i < tileMaps.Length; i++)
         {
-            tileMaps[i].transform.Translate(move * (speed * Time.deltaTime));
+            tileMaps[i].transform.Translate(move * (speed * Time.deltaTime), Space.World);
 
             if (tileMaps[i].transform.position.y < -24f)
             {
-                tileMaps[i].transform.Translate(0, 48, 0);
+                tileMaps[i].transform.Translate(0, 48, 0, Space.World);
             }
         }
     }
