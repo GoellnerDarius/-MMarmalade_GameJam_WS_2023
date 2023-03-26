@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+// UNBEDINGT GAMEOBJECT UM 180 GRAD AUF Z ACHSE ROTIEREN!!!!!!!! DANKE BREITI
 public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
