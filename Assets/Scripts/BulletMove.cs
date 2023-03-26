@@ -6,10 +6,11 @@ public class BulletMove : MonoBehaviour
     public float BulletSpeed = 30;
 
     private int pierce;
-
+    private GameObject soundeffect;
     void Start()
     {
         pierce = PowerUpSates.piercing;
+        soundeffect=GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -32,14 +33,18 @@ public class BulletMove : MonoBehaviour
     {
         // Debug.Log(tag + " collides with " + other.tag, gameObject);
 
-        if (this.CompareTag("EnemyBullet") && !other.CompareTag("EnemyBullet") && !other.CompareTag("Enemy"))
+        if (CompareTag("EnemyBullet") && !other.CompareTag("EnemyBullet") && !other.CompareTag("Enemy"))
         {
             // Hey moch wos cooles?
         }
 
         //Reduces Piercing and deletes Bullet
-        if (this.CompareTag("PlayerBullet") && !other.CompareTag("PlayerBullet") && !other.CompareTag("Player"))
+        if (CompareTag("PlayerBullet") && !other.CompareTag("PlayerBullet") && !other.CompareTag("Player"))
         {
+            if (other.CompareTag("EnemyBullet"))
+            {
+                soundeffect.GetComponent<AudioPlayer>().playCustomAudio("Tsch");
+            }
             pierce--;
             if (pierce <= 0)
                 Destroy(gameObject);
