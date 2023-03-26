@@ -1,0 +1,34 @@
+{
+   "q":"Gehst du auf Festivals?",
+   "answers":[
+      {
+           "a":"Machst du witze?! Das Burnningmann ist quasi meine zweite Heimat",
+         "mood":1,
+         "followup":{
+            "q": "Oha, als ob wir uns noch nie dort getroffen haben! Ich bin auch jedes Jahr dort",
+            "answers":[
+               {
+                  "a":"Lass uns zusammen mal hin und etwas Erdgaß rauchen ;)",
+                  "mood":1
+               },
+               {
+                  "a":"Ich flieg meistens schon am ersten Tag raus.",
+                  "mood":0
+               },
+               {
+                  "a":"Warscheinlich, weil ich dort immer als Feuerwehrmann arbeite",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Oh hell Yeah! Wer nicht auf Frstivals geht ist ein totaler Loser",
+         "mood":0
+      },
+      {
+         "a":"Festivals sind eine Erfindung der Gehörhilfen Industrie um uns Hörschaden zu geben!",
+         "mood":-1
+      }
+   ]
+}

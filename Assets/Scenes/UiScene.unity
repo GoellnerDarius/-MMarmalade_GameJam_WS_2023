@@ -185,8 +185,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flames:
+  - {fileID: 11400000, guid: f91e9522c6b364333897b6c01913e1e4, type: 2}
   - {fileID: 11400000, guid: 9959794216ea64aa1b7faf7df3ede8cd, type: 2}
+  - {fileID: 11400000, guid: 09ae5a866ae4e4d859dd8bb8bd34fff3, type: 2}
+  - {fileID: 11400000, guid: 3c895ea04e8e74f1fb8ed97f14c40b98, type: 2}
   - {fileID: 11400000, guid: ccfd2989d02c843b8ae8b3b95f09d3f5, type: 2}
+  - {fileID: 11400000, guid: d8b81482e08054594bc681a190f2ca0c, type: 2}
+  isStart: 1
+  sam: {fileID: 2800000, guid: 82276c15fbe284b1ea6c280a6e5bbb7d, type: 3}
 --- !u!1 &107914727
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f3ac62af521414a92625150f27712f, type: 3}
+  m_Name: Evan
+  m_EditorClassIdentifier: 
+  Name: Smoking Evan
+  Age: 21
+  Images:
+  - {fileID: 2800000, guid: 604b1ce17d60c41268c183e6cb301ba6, type: 3}
+  - {fileID: 2800000, guid: 604b1ce17d60c41268c183e6cb301ba6, type: 3}
+  - {fileID: 2800000, guid: 604b1ce17d60c41268c183e6cb301ba6, type: 3}
+  isMatch: 0

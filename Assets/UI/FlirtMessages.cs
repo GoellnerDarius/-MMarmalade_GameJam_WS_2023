@@ -85,6 +85,10 @@ public class FlirtMessages : MonoBehaviour
             }
             else
             {
+                await WaitSecondsAsync(1);
+                document.rootVisualElement.Q<VisualElement>("overlay").style.display = DisplayStyle.Flex;
+                document.rootVisualElement.Q<VisualElement>("overlay").style.opacity = 1;
+                await WaitSecondsAsync(2);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
             }
         }
