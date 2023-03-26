@@ -26,9 +26,9 @@ public class PlayerShooter : MonoBehaviour
             PowerUpSates.stage3 = true;
         lastShoot = Time.time;
 
-        // PowerUpSates.stage1 = true;
-        // PowerUpSates.stage2 = true;
-        // PowerUpSates.stage3 = true;
+        PowerUpSates.stage1 = true;
+        PowerUpSates.stage2 = true;
+        PowerUpSates.stage3 = true;
 
         powerupIcons[0].SetActive(PowerUpSates.stage1);
         powerupIcons[1].SetActive(PowerUpSates.stage2);
@@ -89,7 +89,7 @@ public class PlayerShooter : MonoBehaviour
         powerupIcons[1].SetActive(PowerUpSates.stage2);
         powerupIcons[2].SetActive(PowerUpSates.stage3);
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             powerupIcons[selection].transform.localScale = new Vector3(1, 1, 1);
             selection--;
@@ -111,7 +111,9 @@ public class PlayerShooter : MonoBehaviour
             }
             powerupIcons[selection].transform.localScale = iconScale;
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        
+        
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             powerupIcons[selection].transform.localScale = new Vector3(1, 1, 1);
             selection++;
