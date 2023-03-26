@@ -43058,6 +43058,9 @@ MonoBehaviour:
   BackgroundImage: {fileID: 105060473}
   Dude: {fileID: 125749468}
   Girl: {fileID: 378637011}
+  sprites:
+  - {fileID: 21300000, guid: 1a43c64ab7f1f4b6883fc7af44077eb4, type: 3}
+  - {fileID: 21300000, guid: 09ac56624729747e3b505554336caa9c, type: 3}
 --- !u!1 &2087430256
 GameObject:
   m_ObjectHideFlags: 0
@@ -43476,6 +43479,14 @@ PrefabInstance:
     - target: {fileID: 4550572719626579394, guid: 65751f9c82566f04cb5461828cdf10e1, type: 3}
       propertyPath: m_Name
       value: Item 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550572719626579397, guid: 65751f9c82566f04cb5461828cdf10e1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550572719626579397, guid: 65751f9c82566f04cb5461828cdf10e1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4550572719626579399, guid: 65751f9c82566f04cb5461828cdf10e1, type: 3}
       propertyPath: m_RootOrder
