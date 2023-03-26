@@ -1,17 +1,28 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Layout.uss?fileID=7433441132597879392&amp;guid=803ae7056e71243e89f272c89c67cb8f&amp;type=3#Layout" />
     <Style src="project://database/Assets/UI/FlirtMessages.uss?fileID=7433441132597879392&amp;guid=4a69f611ce66442818d68b80e1dc3f33&amp;type=3#FlirtMessages" />
-    <ui:VisualElement name="wrapper" style="flex-direction: column; flex-wrap: nowrap; align-items: center;">
-        <ui:Image name="profile-picture" />
-        <ui:Image class="logo" style="flex-shrink: 0;" />
-        <ui:VisualElement style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px;">
-            <ui:ProgressBar value="50" name="temperature" high-value="100" class="progress-bar" style="width: 100%;" />
+    <ui:VisualElement style="flex-direction: row; height: 100%;">
+        <ui:VisualElement name="bubbles" style="flex-grow: 1;">
+            <ui:Button name="a1" class="bubble" />
+            <ui:Button name="a2" class="bubble bubble-mirrored" />
+            <ui:Button name="a3" class="bubble" />
         </ui:VisualElement>
-        <ui:VisualElement name="messages" style="flex-shrink: 1; flex-direction: column-reverse; flex-basis: auto; min-width: 0;" />
-        <ui:VisualElement name="answers" style="flex-shrink: 0;">
-            <ui:Button text="Answer 1" name="a1" />
-            <ui:Button text="Answer 2" name="a2" />
-            <ui:Button text="Answer 3" name="a3" />
+        <ui:VisualElement name="wrapper" style="flex-direction: column; flex-wrap: nowrap; align-items: center; flex-grow: 0;">
+            <ui:Image name="profile-picture" />
+            <ui:Image class="logo" style="flex-shrink: 0;" />
+            <ui:VisualElement style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px;">
+                <ui:ProgressBar value="50" name="temperature" high-value="100" class="progress-bar" style="width: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="messages" style="flex-shrink: 1; flex-direction: column-reverse; flex-basis: auto; min-width: 0;">
+                <ui:Label class="left" name="typing-indicator" style="flex-direction: row;">
+                    <ui:Box class="circle" />
+                    <ui:Box class="circle" />
+                    <ui:Box class="circle" />
+                </ui:Label>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="bubbles" style="flex-grow: 1; opacity: 0;">
+            <ui:Button class="bubble" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

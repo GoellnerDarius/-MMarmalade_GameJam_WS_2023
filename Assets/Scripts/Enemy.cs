@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 // UNBEDINGT GAMEOBJECT UM 180 GRAD AUF Z ACHSE ROTIEREN!!!!!!!! DANKE BREITI
@@ -7,7 +8,10 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     private Vector3 leftbounds = new(-115f, 0f, 0f);
     private Vector3 rightbounds = new(115f, 0f, 0f);
+    public AudioSource woosh;
+    public AudioSource breath;
 
+    public SpriteRenderer Sprite;
     public Transform CenterPosition;
     public Transform LeftBoundsObject;
     public Transform RightBoundsObject;
@@ -251,7 +255,9 @@ public class Enemy : MonoBehaviour
                 TimeTillAttack += Time.deltaTime;
                 if (TimeTillAttack >= AttackPatternDelay[0])
                 {
-                    Instantiate(Bullet, EnemyTransform.position, new Quaternion(0f, 0f, 180f, 0f));
+                    if(!breath.isPlaying)
+                        breath.Play();
+                        Instantiate(Bullet, EnemyTransform.position, new Quaternion(0f, 0f, 180f, 0f));
                     TimeTillAttack = 0;
                 }
             }
@@ -288,6 +294,8 @@ public class Enemy : MonoBehaviour
                 TimeTillAttack += Time.deltaTime;
                 if (TimeTillAttack >= AttackPatternDelay[0])
                 {
+                    if(!breath.isPlaying)
+                        breath.Play();
                     Instantiate(Bullet, EnemyTransform.position, new Quaternion(0f, 0f, 180f, 0f));
                     TimeTillAttack = 0;
                 }
@@ -308,6 +316,7 @@ public class Enemy : MonoBehaviour
             {
                 if (ShotsFired < BulletAmount)
                 {
+                    PlayAudio();
                     Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 160);
                     Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 180);
                     Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 200);
@@ -341,6 +350,7 @@ public class Enemy : MonoBehaviour
             {
                 if (ShotsFired < BulletAmount)
                 {
+                    PlayAudio();
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 1f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 2f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 3f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
@@ -380,6 +390,7 @@ public class Enemy : MonoBehaviour
             {
                 if (ShotsFired < BulletAmount)
                 {
+                    PlayAudio();
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 1f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 205);
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 2f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 215);
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 3f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 225);
@@ -417,6 +428,7 @@ public class Enemy : MonoBehaviour
             {
                 if (ShotsFired < BulletAmount)
                 {
+                    PlayAudio();
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 1f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 2f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
                     Instantiate(Bullet, new Vector3(EnemyTransform.position.x + 3f * (leftbounds.x / 5f), EnemyTransform.position.y, 0f), Quaternion.identity).transform.Rotate(0, 0, 180);
@@ -461,14 +473,35 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void PlayAudio()
+    {
+            woosh.Play();
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag.Equals("PlayerBullet"))
         {
+            Debug.Log("Hit");
+            StartCoroutine(HitEffect());
             Lifes--;
             if (Lifes == 0)
                 Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator HitEffect()
+    {
+        int howManyFlashes = 5;
+
+        while (howManyFlashes > 0)
+        {
+            Debug.Log("Flash");
+            Sprite.color = Color.black;
+            yield return new WaitForSeconds(.1f);
+            Sprite.color = Color.white;
+            yield return new WaitForSeconds(.1f);
+            howManyFlashes--;
         }
     }
 }
