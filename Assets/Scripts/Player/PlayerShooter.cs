@@ -69,7 +69,7 @@ public class PlayerShooter : MonoBehaviour
         }
 
         //Pircing
-        if (PowerUpSates.stage1 && selection == 1)
+        if (PowerUpSates.stage2 && selection == 1)
         {
             PowerUpSates.piercing = 3;
             pierceTimer = 10f;
@@ -77,7 +77,7 @@ public class PlayerShooter : MonoBehaviour
         }
 
         //Multishot
-        if (PowerUpSates.stage1 && selection == 2)
+        if (PowerUpSates.stage3 && selection == 2)
         {
             multishotTimer = 10f;
             PowerUpSates.stage3 = false;
@@ -89,7 +89,7 @@ public class PlayerShooter : MonoBehaviour
         powerupIcons[1].SetActive(PowerUpSates.stage2);
         powerupIcons[2].SetActive(PowerUpSates.stage3);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             powerupIcons[selection].transform.localScale = new Vector3(1, 1, 1);
             selection--;
@@ -113,8 +113,9 @@ public class PlayerShooter : MonoBehaviour
         }
         
         
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            Debug.Log(selection);
             powerupIcons[selection].transform.localScale = new Vector3(1, 1, 1);
             selection++;
             if (selection == 3)
