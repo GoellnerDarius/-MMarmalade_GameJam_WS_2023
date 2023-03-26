@@ -1,0 +1,34 @@
+{
+   "q":"Wie stehst du zu Napalm?",
+   "answers":[
+      {
+         "a":"Ich bin eher so der Bio Typ.",
+         "mood":1,
+         "followup":{
+            "q":"So ein glück ich dachte schon du wärst so ein Öl junky.",
+            "answers":[
+               {
+                  "a":"Na ich mag meine Krankenversicherung.",
+                  "mood":1
+               },
+               {
+                  "a":"Long live the Queen!",
+                  "mood":0
+               },
+               {
+                  "a":"Ich bin nur ein junky für mein Vaterland!",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Is okay, muss man aber nicht.",
+         "mood":0
+      },
+      {
+         "a":"Napal is voll Feuerholz.",
+         "mood":-1
+      }
+   ]
+}

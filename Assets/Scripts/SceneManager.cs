@@ -67,7 +67,7 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(StoryTellState == false)
+        if (StoryTellState == false)
         {
             Tellstory();
         }
@@ -111,7 +111,7 @@ public class SceneManager : MonoBehaviour
     public void Tellstory()
     {
         PreStoryTime -= Time.deltaTime;
-        if(BackgroundImage.color.a < 1 && PreStoryTime < 0)
+        if (BackgroundImage.color.a < 1 && PreStoryTime < 0)
         {
             //Debug.Log(BackgroundImage.color.a);
             BlackScreenComponents = BackgroundImage.color;
@@ -123,21 +123,21 @@ public class SceneManager : MonoBehaviour
         }
         else
         {
-            if(PreStoryTime < 0)
+            if (PreStoryTime < 0)
             {
-               // Debug.Log("Activate Textbox");
+                // Debug.Log("Activate Textbox");
                 StoryText_bottom.text = StoryText[StoryCount];
-                BottomTextbox.SetActive(true); 
+                BottomTextbox.SetActive(true);
                 StoryReadTime -= Time.deltaTime;
-                if(StoryReadTime < 0)
+                if (StoryReadTime < 0)
                 {
                     StoryReadTime = Storydelay;
                     StoryCount++;
                     Speaker.text = Speakers[Speakernum] + ":";
                     StoryText_bottom.text = StoryText[StoryCount];
-                    if(StoryCount + 1 >= StoryText.Length)
+                    if (StoryCount + 1 >= StoryText.Length)
                     {
-                        StoryTellState = true;  
+                        StoryTellState = true;
                     }
                     if(Speakernum == 0)
                     {

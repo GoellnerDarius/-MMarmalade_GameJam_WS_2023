@@ -82,6 +82,9 @@
     height:24px;
 }
 
+#overlay {
+    transition: opacity 0.5s ease-out;
+}
 #bubbles {
     justify-content: center;
     opacity: 0;

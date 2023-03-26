@@ -1,0 +1,34 @@
+{
+   "q":"Bist du Gläubig?",
+   "answers":[
+      {
+           "a":"Ich bin anhänger der einzig wahren Religion... SCIENTOLOGY!",
+         "mood":1,
+         "followup":{
+            "q":"Endlich treff ich hier mal einen gleichgesinnten!",
+            "answers":[
+               {
+                  "a":"Mein E-Meterwert ist 40.0",
+                  "mood":1
+               },
+               {
+                  "a":"FÜR DIE WISSENSCHAFT UND NOCH VIEEEEEEL WEITER!",
+                  "mood":0
+               },
+               {
+                  "a":"Im Namen des Vaters, des Sohnes und des heiligen Geistes!",
+                  "mood":-1
+               }
+            ]
+         }
+      },
+      {
+         "a":"Die einzige Religion an die ich glaube ist die Furry supremacy!",
+         "mood":0
+      },
+      {
+         "a":"Ich bin getaufter Christ",
+         "mood":-1
+      }
+   ]
+}

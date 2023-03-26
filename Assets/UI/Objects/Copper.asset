@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45f3ac62af521414a92625150f27712f, type: 3}
-  m_Name: Ash
+  m_Name: Copper
   m_EditorClassIdentifier: 
-  Name: Ash
-  Age: 539
+  Name: Copper
+  Age: 23
   Images:
-  - {fileID: 2800000, guid: 33e7e7fae80084a9f9309d7178ab7d76, type: 3}
-  - {fileID: 2800000, guid: 1a43c64ab7f1f4b6883fc7af44077eb4, type: 3}
-  - {fileID: 2800000, guid: a570be66e462543368de5423bb2837a7, type: 3}
+  - {fileID: 2800000, guid: a898e6e4e70b24fce88032b4de4c44db, type: 3}
+  - {fileID: 2800000, guid: 09ac56624729747e3b505554336caa9c, type: 3}
+  - {fileID: 2800000, guid: c9d7e277d80604b188d72380c9b5bf6a, type: 3}
   isMatch: 1
