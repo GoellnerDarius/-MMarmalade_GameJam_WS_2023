@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 // UNBEDINGT GAMEOBJECT UM 180 GRAD AUF Z ACHSE ROTIEREN!!!!!!!! DANKE BREITI
@@ -9,6 +10,8 @@ public class Enemy : MonoBehaviour
     private Vector3 rightbounds = new(115f, 0f, 0f);
     public AudioSource woosh;
     public AudioSource breath;
+
+    public SpriteRenderer Sprite;
     public Transform CenterPosition;
     public Transform LeftBoundsObject;
     public Transform RightBoundsObject;
@@ -216,7 +219,6 @@ public class Enemy : MonoBehaviour
 
     public void Attackpattern1()
     {
-        PlayAudio();
         Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 160f);
         Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 180f);
         Instantiate(Bullet, EnemyTransform.position, Quaternion.identity).transform.Rotate(0, 0, 200f);
@@ -480,9 +482,26 @@ public class Enemy : MonoBehaviour
     {
         if (col.tag.Equals("PlayerBullet"))
         {
+            Debug.Log("Hit");
+            StartCoroutine(HitEffect());
             Lifes--;
             if (Lifes == 0)
                 Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator HitEffect()
+    {
+        int howManyFlashes = 5;
+
+        while (howManyFlashes > 0)
+        {
+            Debug.Log("Flash");
+            Sprite.color = Color.black;
+            yield return new WaitForSeconds(.1f);
+            Sprite.color = Color.white;
+            yield return new WaitForSeconds(.1f);
+            howManyFlashes--;
         }
     }
 }
