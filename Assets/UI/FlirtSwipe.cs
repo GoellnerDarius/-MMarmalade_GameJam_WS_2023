@@ -23,7 +23,7 @@ public class FlirtSwipe : MonoBehaviour
         document = GetComponent<UIDocument>();
         document.rootVisualElement.Q<Button>("start").RegisterCallback<ClickEvent, VisualElement>(InitProfile, document.rootVisualElement);
         document.rootVisualElement.Q<Image>("profile-picture").style.backgroundImage = new StyleBackground(sam);
-        document.rootVisualElement.Q<Image>("profile-picture").style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
+        document.rootVisualElement.Q<Image>("profile-picture").style.unityBackgroundScaleMode = ScaleMode.ScaleAndCrop;
 
         document.rootVisualElement.Q<Label>("name").text = "Sam";
         document.rootVisualElement.Q<Label>("age").text = "Myself";
