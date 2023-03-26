@@ -1,28 +1,31 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Layout.uss?fileID=7433441132597879392&amp;guid=803ae7056e71243e89f272c89c67cb8f&amp;type=3#Layout" />
     <Style src="project://database/Assets/UI/FlirtMessages.uss?fileID=7433441132597879392&amp;guid=4a69f611ce66442818d68b80e1dc3f33&amp;type=3#FlirtMessages" />
-    <ui:VisualElement style="flex-direction: row; height: 100%;">
+    <ui:VisualElement name="VisualElement" style="flex-direction: row; height: 100%; -unity-font-definition: url(&apos;project://database/Assets/Fonts/slkscr%20SDF.asset?fileID=11400000&amp;guid=5263167ed17f84361bcf2a0993b2f6a7&amp;type=2#slkscr SDF&apos;);">
         <ui:VisualElement name="bubbles" style="flex-grow: 1;">
             <ui:Button name="a1" class="bubble" />
             <ui:Button name="a2" class="bubble bubble-mirrored" />
             <ui:Button name="a3" class="bubble" />
         </ui:VisualElement>
-        <ui:VisualElement name="wrapper" style="flex-direction: column; flex-wrap: nowrap; align-items: center; flex-grow: 0;">
+        <ui:VisualElement name="wrapper" style="flex-direction: column; flex-wrap: nowrap; align-items: center; flex-grow: 0; justify-content: space-between; margin-top: 10px; margin-bottom: 10px; height: auto; border-top-left-radius: 16px; border-bottom-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; overflow: hidden; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-left-color: rgb(235, 138, 54); border-right-color: rgb(235, 138, 54); border-top-color: rgb(235, 138, 54); border-bottom-color: rgb(235, 138, 54);">
             <ui:Image name="profile-picture" />
-            <ui:Image class="logo" style="flex-shrink: 0;" />
-            <ui:VisualElement style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px;">
-                <ui:ProgressBar value="50" name="temperature" high-value="100" class="progress-bar" style="width: 100%;" />
+            <ui:VisualElement style="width: 100%; flex-direction: column-reverse;">
+                <ui:VisualElement style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px;" />
+                <ui:Image class="logo" style="flex-shrink: 0;" />
             </ui:VisualElement>
             <ui:VisualElement name="messages" style="flex-shrink: 1; flex-direction: column-reverse; flex-basis: auto; min-width: 0;">
-                <ui:Label class="left" name="typing-indicator" style="flex-direction: row;">
+                <ui:VisualElement style="position: absolute; opacity: 0.5; height: 100%; width: 100%; background-color: rgb(0, 0, 0); margin: 0; left: 0; right: 0; top: -1px; bottom: 0; padding: 0; border-width: 0; border-top-width: 2px; border-top-color: rgb(83, 83, 84);" />
+                <ui:Label name="typing-indicator" class="left" style="flex-direction: row; margin-bottom: 12px;">
                     <ui:Box class="circle" />
                     <ui:Box class="circle" />
                     <ui:Box class="circle" />
                 </ui:Label>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="bubbles" style="flex-grow: 1; opacity: 0;">
-            <ui:Button class="bubble" />
+        <ui:VisualElement name="bubbles" style="flex-grow: 1; opacity: 1;">
+            <ui:ProgressBar value="50" name="temperature" high-value="100" class="progress-bar" style="width: 365px; rotate: -90deg; position: absolute; left: -61px; top: 341px;" />
+            <ui:Button name="a1" class="bubble" style="opacity: 0;" />
+            <ui:IMGUIContainer name="temp" style="width: 274px; height: 500px; position: absolute; top: auto; left: 26px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
