@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Item1
-  m_Speed: 10
+  m_Speed: 24
   m_CycleOffset: 1
   m_Transitions: []
   m_StateMachineBehaviours: []

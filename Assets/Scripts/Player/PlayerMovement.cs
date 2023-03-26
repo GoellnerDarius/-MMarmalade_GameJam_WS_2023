@@ -8,14 +8,15 @@ public class PlayerMovement : MonoBehaviour
     public float lowerBounds = -9;
     public float leftBound = -17;
     public float rightBound = 17;
-    void Start()
-    {
-    }
+
+    private Vector3 _movement;
+
 
     // Update is called once per frame
     void Update()
     {
         Vector3 movement = getMovement();
+        _movement = movement * (speed * Time.deltaTime);
         transform.Translate(movement * (speed * Time.deltaTime));
     }
 

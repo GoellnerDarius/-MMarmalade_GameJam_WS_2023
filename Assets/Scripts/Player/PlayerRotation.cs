@@ -4,16 +4,12 @@ public class PlayerRotation : MonoBehaviour
 {
     // Start is called before the first frame update
     public float rotation = 6;
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(getRotation() * rotation);
-
+        // transform.rotation = getRotation(62);
     }
     private Vector3 getRotation()
     {
@@ -27,12 +23,5 @@ public class PlayerRotation : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D))
             rotation -= new Vector3(0, 0, -1);
         return rotation;
-    }
-
-    private Vector3 getRotation2()
-    {
-
-
-        return new Vector3();
     }
 }
