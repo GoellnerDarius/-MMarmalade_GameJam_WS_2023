@@ -483,7 +483,6 @@ public class Enemy : MonoBehaviour
     {
         if (col.tag.Equals("PlayerBullet"))
         {
-            Debug.Log("Hit");
             StartCoroutine(HitEffect());
             Lifes--;
             if (Lifes == 0)
@@ -500,7 +499,6 @@ public class Enemy : MonoBehaviour
 
         while (howManyFlashes > 0)
         {
-            Debug.Log("Flash");
             Sprite.color = Color.black;
             yield return new WaitForSeconds(.1f);
             Sprite.color = Color.white;
