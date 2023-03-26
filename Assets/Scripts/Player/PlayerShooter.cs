@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
@@ -10,13 +11,28 @@ public class PlayerShooter : MonoBehaviour
     private int shield = 0;
     private float pierceTimer = 0;
     private float multishotTimer = 0;
-
-    private int powerupStage = 100;
-
-    // Start is called before the first frame update
+    public int selection = 0;
+    public Vector3 iconScale = new(2, 2, 2);
+    public GameObject[] powerupIcons = new GameObject[3];
+    
+// Start is called before the first frame update
     void Start()
     {
+        if (Share.Score >= 110)
+            PowerUpSates.stage1 = true;
+        if (Share.Score >= 130)
+            PowerUpSates.stage2 = true;
+        if (Share.Score >= 150)
+            PowerUpSates.stage3 = true;
         lastShoot = Time.time;
+
+        // PowerUpSates.stage1 = true;
+        // PowerUpSates.stage2 = true;
+        // PowerUpSates.stage3 = true;
+
+        powerupIcons[0].SetActive(PowerUpSates.stage1);
+        powerupIcons[1].SetActive(PowerUpSates.stage2);
+        powerupIcons[2].SetActive(PowerUpSates.stage3);
     }
 
     // Update is called once per frame
@@ -38,31 +54,87 @@ public class PlayerShooter : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
             DoPowerUp();
+        selectPowerup();
     }
 
+
     private void DoPowerUp()
+
     {
-        //Shield
-        if (powerupStage >= 1)
+
+        if (PowerUpSates.stage1 && selection == 0)
         {
             shield = 3;
+            PowerUpSates.stage1 = false;
         }
 
         //Pircing
-        if (powerupStage >= 2)
+        if (PowerUpSates.stage1 && selection == 1)
         {
             PowerUpSates.piercing = 3;
             pierceTimer = 10f;
+            PowerUpSates.stage2 = false;
         }
 
         //Multishot
-        if (powerupStage >= 3)
+        if (PowerUpSates.stage1 && selection == 2)
         {
             multishotTimer = 10f;
+            PowerUpSates.stage3 = false;
         }
-
-        powerupStage = 0;
     }
+    private void selectPowerup()
+    {
+        powerupIcons[0].SetActive(PowerUpSates.stage1);
+        powerupIcons[1].SetActive(PowerUpSates.stage2);
+        powerupIcons[2].SetActive(PowerUpSates.stage3);
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            powerupIcons[selection].transform.localScale = new Vector3(1, 1, 1);
+            selection--;
+            if (selection == -1)
+                selection = 2;
+            if (!powerupIcons[selection].activeSelf)
+            {
+                selection--;
+                if (selection == -1)
+                    selection = 2;
+                
+            }
+            if (!powerupIcons[selection].activeSelf)
+            {
+                selection--;
+                if (selection == -1)
+                    selection = 2;
+                
+            }
+            powerupIcons[selection].transform.localScale = iconScale;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            powerupIcons[selection].transform.localScale = new Vector3(1, 1, 1);
+            selection++;
+            if (selection == 3)
+                selection = 0;
+            if (!powerupIcons[selection].activeSelf)
+            {
+                selection++;
+                if (selection == 3)
+                    selection = 0;
+                
+            }
+            if (!powerupIcons[selection].activeSelf)
+            {
+                selection++;
+                if (selection == 3)
+                    selection = 0;
+                
+            }
+            powerupIcons[selection].transform.localScale = iconScale;
+        }
+    }
+
     private void SpawnBullet()
     {
         Vector3 position = transform.position;
@@ -73,7 +145,6 @@ public class PlayerShooter : MonoBehaviour
             Instantiate(bullet, position + new Vector3(0, 2.3f, 0), Quaternion.identity).transform.Rotate(0, 0, 45);
             Instantiate(bullet, position + new Vector3(0, 2.3f, 0), Quaternion.identity).transform.Rotate(0, 0, -45);
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -106,13 +177,13 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
+
     private IEnumerator HitEffect()
     {
         int howManyFlashes = 5;
 
         while (howManyFlashes > 0)
         {
-            Debug.Log("Flash");
             Sprite.color = Color.black;
             yield return new WaitForSeconds(.1f);
             Sprite.color = Color.white;
@@ -122,8 +193,6 @@ public class PlayerShooter : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col)
-
-
     {
         Collide(col.collider);
     }
