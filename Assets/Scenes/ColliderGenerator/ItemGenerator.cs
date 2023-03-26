@@ -6,7 +6,7 @@ public class ItemGenerator : MonoBehaviour
 {
     [SerializeField] private Transform _startPoint;
     [SerializeField] private Transform _endPoint;
-    [SerializeField] private int _spawnRate;
+    [SerializeField] private float _spawnRate;
     [SerializeField] private GameObject _colliders;
     [SerializeField] private SpriteRenderer _colliderPrefab;
 
