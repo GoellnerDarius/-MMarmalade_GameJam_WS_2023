@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Goellner_Test.unity
     guid: 32fea5ede7b81634ba616af84fd56c36
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 1015b9bdd4a427943881613493b0a4ab
+  - enabled: 1
+    path: Assets/Scenes/UiScene.unity
+    guid: 02cca151554fc47e89e20eb8e6f92e86
   m_configObjects: {}

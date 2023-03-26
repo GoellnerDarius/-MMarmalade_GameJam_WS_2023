@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // UNBEDINGT GAMEOBJECT UM 180 GRAD AUF Z ACHSE ROTIEREN!!!!!!!! DANKE BREITI
 public class Enemy : MonoBehaviour
@@ -255,9 +256,9 @@ public class Enemy : MonoBehaviour
                 TimeTillAttack += Time.deltaTime;
                 if (TimeTillAttack >= AttackPatternDelay[0])
                 {
-                    if(!breath.isPlaying)
+                    if (!breath.isPlaying)
                         breath.Play();
-                        Instantiate(Bullet, EnemyTransform.position, new Quaternion(0f, 0f, 180f, 0f));
+                    Instantiate(Bullet, EnemyTransform.position, new Quaternion(0f, 0f, 180f, 0f));
                     TimeTillAttack = 0;
                 }
             }
@@ -294,7 +295,7 @@ public class Enemy : MonoBehaviour
                 TimeTillAttack += Time.deltaTime;
                 if (TimeTillAttack >= AttackPatternDelay[0])
                 {
-                    if(!breath.isPlaying)
+                    if (!breath.isPlaying)
                         breath.Play();
                     Instantiate(Bullet, EnemyTransform.position, new Quaternion(0f, 0f, 180f, 0f));
                     TimeTillAttack = 0;
@@ -475,7 +476,7 @@ public class Enemy : MonoBehaviour
 
     private void PlayAudio()
     {
-            woosh.Play();
+        woosh.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -486,7 +487,10 @@ public class Enemy : MonoBehaviour
             StartCoroutine(HitEffect());
             Lifes--;
             if (Lifes == 0)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
                 Destroy(gameObject);
+            }
         }
     }
 
