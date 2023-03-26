@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
 {
+    public SpriteRenderer Sprite;
     public GameObject bullet;
     public int lifes = 3;
     private float lastShoot;
@@ -93,6 +95,7 @@ public class PlayerShooter : MonoBehaviour
         //Life Calculation
         if (other.tag.Equals("EnemyBullet"))
         {
+            StartCoroutine(HitEffect());
             lifes--;
             Destroy(other.gameObject);
         }
@@ -100,6 +103,21 @@ public class PlayerShooter : MonoBehaviour
         if (lifes == 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator HitEffect()
+    {
+        int howManyFlashes = 5;
+
+        while (howManyFlashes > 0)
+        {
+            Debug.Log("Flash");
+            Sprite.color = Color.black;
+            yield return new WaitForSeconds(.1f);
+            Sprite.color = Color.white;
+            yield return new WaitForSeconds(.1f);
+            howManyFlashes--;
         }
     }
 
